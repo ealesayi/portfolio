@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نظام إدارة الصيدلية - Pharmacy Management System</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+      background: linear-gradient(135deg, #0b1120 0%, #1a2639 100%);
+      color: #e2e8f0;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    /* شريط تبديل اللغة */
+    .lang-bar {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(14, 165, 233, 0.2);
+    }
+
+    .lang-bar .container {
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+    }
+
+    .lang-btn {
+      background: transparent;
+      color: #94a3b8;
+      border: 2px solid #334155;
+      padding: 8px 25px;
+      border-radius: 40px;
+      font-family: 'Cairo', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .lang-btn:hover {
+      background: #0ea5e9;
+      color: white;
+      border-color: #0ea5e9;
+      transform: translateY(-2px);
+    }
+
+    .lang-btn.active {
+      background: #0ea5e9;
+      color: white;
+      border-color: #0ea5e9;
+      box-shadow: 0 10px 20px -5px rgba(14, 165, 233, 0.3);
+    }
+
+    /* الهيدر */
+    .header {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 80%;
+      height: 200%;
+      background: radial-gradient(circle at 70% 30%, rgba(14, 165, 233, 0.15), transparent 70%);
+      z-index: 0;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 20px 40px;
+      border-radius: 80px;
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(14, 165, 233, 0.3);
+      margin-bottom: 30px;
+      box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      color: white;
+      box-shadow: 0 20px 30px -5px rgba(14, 165, 233, 0.5);
+    }
+
+    .logo-text {
+      text-align: right;
+    }
+
+    .logo-text h2 {
+      margin: 0;
+      color: white;
+      font-size: 2.2em;
+      font-weight: 800;
+    }
+
+    .logo-text p {
+      margin: 0;
+      color: #94a3b8;
+      font-size: 1.1em;
+    }
+
+    .header h1 {
+      font-size: 4.5em;
+      background: linear-gradient(135deg, #fff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+      font-weight: 800;
+      text-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .header .tagline {
+      font-size: 1.5em;
+      color: #cbd5e1;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      line-height: 1.8;
+    }
+
+    .badge-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: #0ea5e9;
+      padding: 12px 35px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1em;
+      border: 1px solid #0ea5e9;
+      box-shadow: 0 10px 20px -5px rgba(14, 165, 233, 0.2);
+      transition: all 0.3s;
+    }
+
+    .badge:hover {
+      transform: translateY(-5px);
+      background: #0ea5e9;
+      color: white;
+      border-color: white;
+    }
+
+    /* الأقسام العامة */
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    section:nth-child(even) {
+      background: rgba(15, 23, 42, 0.5);
+    }
+
+    h2 {
+      font-size: 3em;
+      color: white;
+      margin-bottom: 60px;
+      text-align: center;
+      position: relative;
+      font-weight: 800;
+    }
+
+    h2:after {
+      content: '';
+      display: block;
+      width: 120px;
+      height: 5px;
+      background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+      margin: 20px auto 0;
+      border-radius: 5px;
+    }
+
+    /* بطاقات الميزات */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    .feature-card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 40px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(14, 165, 233, 0.2);
+      box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+      transform: scaleX(0);
+      transition: transform 0.5s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-20px) scale(1.02);
+      border-color: #0ea5e9;
+      box-shadow: 0 40px 60px -20px rgba(14, 165, 233, 0.5);
+    }
+
+    .feature-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .feature-icon {
+      font-size: 4.5em;
+      color: #0ea5e9;
+      margin-bottom: 25px;
+      filter: drop-shadow(0 10px 15px rgba(14, 165, 233, 0.3));
+    }
+
+    .feature-card h3 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .feature-card p {
+      color: #94a3b8;
+      font-size: 1.1em;
+      line-height: 1.8;
+    }
+
+    /* قائمة النقاط */
+    .list-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
+    }
+
+    .list-item {
+      background: rgba(30, 41, 59, 0.5);
+      backdrop-filter: blur(5px);
+      padding: 20px 25px;
+      border-radius: 20px;
+      border-right: 6px solid #0ea5e9;
+      font-size: 1.15em;
+      transition: all 0.3s;
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    .list-item:hover {
+      transform: translateX(10px);
+      background: #1e293b;
+    }
+
+    .list-item i {
+      color: #0ea5e9;
+      margin-left: 15px;
+      font-size: 1.3em;
+    }
+
+    /* التقنيات */
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .tech-item {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      padding: 20px 50px;
+      border-radius: 60px;
+      border: 2px solid #0ea5e9;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 1.3em;
+      transition: all 0.4s;
+      box-shadow: 0 15px 25px -10px rgba(14, 165, 233, 0.3);
+    }
+
+    .tech-item:hover {
+      transform: scale(1.1) rotate(2deg);
+      background: #0ea5e9;
+      color: white;
+      border-color: white;
+    }
+
+    .tech-item i {
+      font-size: 1.8em;
+    }
+
+    /* فوتر */
+    .footer {
+      background: #0b1120;
+      padding: 60px 0 30px;
+      text-align: center;
+      border-top: 1px solid #1e293b;
+    }
+
+    .footer .logo {
+      margin-bottom: 30px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin: 30px 0;
+      color: #94a3b8;
+      font-size: 1.1em;
+    }
+
+    .contact-info i {
+      color: #0ea5e9;
+      margin-left: 10px;
+      font-size: 1.3em;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+      color: white;
+      padding: 18px 70px;
+      border-radius: 60px;
+      font-size: 1.5em;
+      font-weight: 800;
+      text-decoration: none;
+      margin: 30px 0;
+      box-shadow: 0 20px 40px -5px rgba(14, 165, 233, 0.5);
+      transition: all 0.4s;
+      border: 2px solid transparent;
+    }
+
+    .download-btn:hover {
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 30px 50px -5px #0ea5e9;
+      background: white;
+      color: #0ea5e9;
+      border-color: #0ea5e9;
+    }
+
+    .copyright {
+      color: #334155;
+      margin-top: 40px;
+      font-size: 0.95em;
+    }
+
+    /* تخصيص الاتجاه */
+    [dir="rtl"] .list-item {
+      border-right: 6px solid #0ea5e9;
+      border-left: none;
+    }
+
+    [dir="rtl"] .list-item:hover {
+      transform: translateX(-10px);
+    }
+
+    [dir="rtl"] .tech-item i {
+      margin-left: 10px;
+      margin-right: 0;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 { font-size: 2.5em; }
+      h2 { font-size: 2.2em; }
+    }
+  </style>
+</head>
+<body>
+  <!-- شريط اللغة -->
+  <div class="lang-bar" dir="ltr">
+    <div class="container">
+      <button class="lang-btn active" id="btn-ar">العربية</button>
+      <button class="lang-btn" id="btn-en">English</button>
+    </div>
+  </div>
+
+  <!-- المحتوى الرئيسي -->
+  <div id="content" dir="rtl">
+    <!-- سيتم تعبئته عبر JavaScript -->
+  </div>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Translations object without gallery and stats
+    const translations = {
+      ar: {
+        designer: "تصميم: إبراهيم العيسائي",
+        appName: "💊 نظام إدارة الصيدلية",
+        tagline: "حل متكامل لإدارة الصيدليات والمستودعات",
+        subTagline: "نظم صيدليتك بدقة واحترافية",
+        badges: ["C#", ".NET", "MySQL", "Desktop"],
+        featuresTitle: "الميزات الرئيسية",
+        features: [
+          { icon: "👤", title: "إدارة المستخدمين", desc: "إضافة، تعديل، حذف المستخدمين (مدير، صيدلي، طبيب) بصلاحيات مختلفة." },
+          { icon: "💊", title: "إدارة الأدوية", desc: "تتبع المخزون، تواريخ انتهاء الصلاحية، والتنبيه عند نفاد الكمية." },
+          { icon: "🛒", title: "المبيعات", desc: "بيع الأدوية مع إصدار فواتير PDF وإدارة السلة." },
+          { icon: "📊", title: "التقارير", desc: "إحصائيات حية عن المبيعات، الأدوية المنتهية، والمخزون." }
+        ],
+        objectivesTitle: "أهداف النظام",
+        objectives: [
+          "ضمان توفر الأدوية في المخزون وفق سياسات فعالة.",
+          "الحفاظ على قاعدة بيانات لخيارات استبدال الأدوية.",
+          "تحسين أداء النظام من خلال مراقبة الأنشطة والخدمات.",
+          "تتبع حركة الأدوية وتحسين إدارة الصيدلية.",
+          "توفير واجهة سهلة الاستخدام لجميع المستخدمين."
+        ],
+        adminFeatures: [
+          "إدارة المستخدمين (إضافة، حذف، تحديث)",
+          "عرض المبيعات اليومية",
+          "مشاهدة المخزون المتوفر",
+          "إحصائية بعدد الأدوية والمستخدمين"
+        ],
+        pharmacistFeatures: [
+          "إضافة وتعديل وحذف الأدوية",
+          "فحص صلاحية الأدوية",
+          "بيع الأدوية بدون وصفة",
+          "البحث عن الأدوية"
+        ],
+        doctorFeatures: [
+          "إدارة المرضى (إضافة، تعديل، حذف)",
+          "إضافة وصفات طبية",
+          "بيع الأدوية بوصفة",
+          "ربط الأدوية بالمرضى"
+        ],
+        techTitle: "التقنيات المستخدمة",
+        tech: [
+          { icon: "fa-solid fa-code", name: "C# / .NET" },
+          { icon: "fa-solid fa-database", name: "MySQL" },
+          { icon: "fa-brands fa-microsoft", name: "Visual Studio" },
+          { icon: "fa-solid fa-file-pdf", name: "PDF" }
+        ],
+        benefitsTitle: "فوائد النظام",
+        benefits: [
+          "⏱️ توفير الوقت: لا مزيد من السجلات الورقية.",
+          "🎯 الدقة: تقليل الأخطاء في إدارة الأدوية.",
+          "📲 تواصل سريع: إشعارات بانتهاء الصلاحية.",
+          "📈 إحصائيات حية: متابعة الأداء.",
+          "🔐 أمان: صلاحيات مختلفة لكل مستخدم."
+        ],
+        futureTitle: "الخطط المستقبلية",
+        future: [
+          "ربط مع أنظمة المستشفيات.",
+          "إشعارات عبر البريد الإلكتروني.",
+          "تطبيق جوال للمرضى."
+        ],
+        contact: {
+          company: "تصميم وتطوير: إبراهيم العيسائي",
+          email: "ebrahim.t.alesayi@gmail.com",
+          website: "ealesayi.netlify.app",
+          phone: "+966 53 114 6176"
+        },
+        downloadText: "اقراء المزيد ",
+        footerBadge: "💊 Pharmacy MS",
+        copyright: "© 2025 نظام إدارة الصيدلية. جميع الحقوق محفوظة."
+      },
+      en: {
+        designer: "Designed by: Ebrahim Alesayi",
+        appName: "💊 Pharmacy Management System",
+        tagline: "Integrated solution for pharmacy and warehouse management",
+        subTagline: "Manage your pharmacy with precision and professionalism",
+        badges: ["C#", ".NET", "MySQL", "Desktop"],
+        featuresTitle: "Key Features",
+        features: [
+          { icon: "👤", title: "User Management", desc: "Add, edit, delete users (admin, pharmacist, doctor) with different permissions." },
+          { icon: "💊", title: "Medicine Management", desc: "Track inventory, expiry dates, and low-stock alerts." },
+          { icon: "🛒", title: "Sales", desc: "Sell medicines, generate PDF invoices, and manage cart." },
+          { icon: "📊", title: "Reports", desc: "Live statistics on sales, expired medicines, and stock." }
+        ],
+        objectivesTitle: "System Objectives",
+        objectives: [
+          "Ensure medicine availability in stock according to effective policies.",
+          "Maintain a database of potential medicine replacement options.",
+          "Improve system performance by monitoring activities and services.",
+          "Track medicine movement and improve pharmacy management.",
+          "Provide an easy-to-use interface for all users."
+        ],
+        adminFeatures: [
+          "User management (add, delete, update)",
+          "View daily sales",
+          "View available stock",
+          "Statistics on medicines and users"
+        ],
+        pharmacistFeatures: [
+          "Add, edit, delete medicines",
+          "Check medicine expiry",
+          "Sell non-prescription medicines",
+          "Search for medicines"
+        ],
+        doctorFeatures: [
+          "Manage patients (add, edit, delete)",
+          "Add prescriptions",
+          "Sell prescription medicines",
+          "Link medicines to patients"
+        ],
+        techTitle: "Technologies Used",
+        tech: [
+          { icon: "fa-solid fa-code", name: "C# / .NET" },
+          { icon: "fa-solid fa-database", name: "MySQL" },
+          { icon: "fa-brands fa-microsoft", name: "Visual Studio" },
+          { icon: "fa-solid fa-file-pdf", name: "PDF" }
+        ],
+        benefitsTitle: "Benefits",
+        benefits: [
+          "⏱️ Time saving: No more paper records.",
+          "🎯 Accuracy: Reduce errors in medicine management.",
+          "📲 Fast communication: Expiry alerts.",
+          "📈 Live statistics: Performance tracking.",
+          "🔐 Security: Different permissions for each user."
+        ],
+        futureTitle: "Future Plans",
+        future: [
+          "Integration with hospital systems.",
+          "Email notifications.",
+          "Mobile app for patients."
+        ],
+        contact: {
+          company: "Design & Development: Ibrahim Al-Asaei",
+          email: "ebrahim.t.alesayi@gmail.com",
+          website: "ealesayi.netlify.app",
+          phone: "+966 53 114 6176"
+        },
+        downloadText: "for more info",
+        footerBadge: "💊 Pharmacy MS",
+        copyright: "© 2025 Pharmacy Management System. All rights reserved."
+      }
+    };
+
+    let currentLang = 'ar';
+
+    function renderContent(lang) {
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.getElementById('btn-ar').setAttribute('aria-pressed', String(lang === 'ar'));
+      document.getElementById('btn-en').setAttribute('aria-pressed', String(lang === 'en'));
+      const t = translations[lang];
+      document.title = t.appName;
+      const contentDiv = document.getElementById('content');
+      contentDiv.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+      contentDiv.innerHTML = `
+        <!-- الهيدر -->
+        <header class="header">
+          <div class="container header-content">
+            <div class="logo" data-aos="fade-down">
+              <div class="logo-icon">💊</div>
+              <div class="logo-text">
+                <h2>${t.designer}</h2>
+                <p>${t.appName}</p>
+              </div>
+            </div>
+            <h1 data-aos="fade-up">${t.appName}</h1>
+            <p class="tagline" data-aos="fade-up" data-aos-delay="100">${t.tagline}</p>
+            <p style="color: #94a3b8; margin-bottom: 30px;" data-aos="fade-up" data-aos-delay="150">${t.subTagline}</p>
+            <div class="badge-container" data-aos="fade-up" data-aos-delay="200">
+              ${t.badges.map(b => `<span class="badge">${b}</span>`).join('')}
+            </div>
+          </div>
+        </header>
+
+        <!-- الميزات -->
+        <section>
+          <div class="container">
+            <h2 data-aos="fade-up">${t.featuresTitle}</h2>
+            <div class="features-grid">
+              ${t.features.map((f, index) => `
+                <div class="feature-card" data-aos="flip-left" data-aos-delay="${index * 100}">
+                  <div class="feature-icon">${f.icon}</div>
+                  <h3>${f.title}</h3>
+                  <p>${f.desc}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- أهداف النظام -->
+        <section>
+          <div class="container">
+            <h2 data-aos="fade-up">${t.objectivesTitle}</h2>
+            <div class="list-items">
+              ${t.objectives.map((item, index) => `<div class="list-item" data-aos="fade-right" data-aos-delay="${index * 50}"><i class="fas fa-check-circle"></i> ${item}</div>`).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- ميزات المدير -->
+        <section>
+          <div class="container">
+            <h2 data-aos="fade-up">👤 ${lang === 'ar' ? 'المدير' : 'Admin'}</h2>
+            <div class="list-items">
+              ${t.adminFeatures.map((item, index) => `<div class="list-item" data-aos="fade-right" data-aos-delay="${index * 50}"><i class="fas fa-check-circle"></i> ${item}</div>`).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- ميزات الصيدلي -->
+        <section>
+          <div class="container">
+            <h2 data-aos="fade-up">💊 ${lang === 'ar' ? 'الصيدلي' : 'Pharmacist'}</h2>
+            <div class="list-items">
+              ${t.pharmacistFeatures.map((item, index) => `<div class="list-item" data-aos="fade-right" data-aos-delay="${index * 50}"><i class="fas fa-check-circle"></i> ${item}</div>`).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- ميزات الطبيب -->
+        <section>
+          <div class="container">
+            <h2 data-aos="fade-up">👨‍⚕️ ${lang === 'ar' ? 'الطبيب' : 'Doctor'}</h2>
+            <div class="list-items">
+              ${t.doctorFeatures.map((item, index) => `<div class="list-item" data-aos="fade-right" data-aos-delay="${index * 50}"><i class="fas fa-check-circle"></i> ${item}</div>`).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- التقنيات -->
+        <section>
+          <div class="container">
+            <h2 data-aos="fade-up">${t.techTitle}</h2>
+            <div class="tech-grid">
+              ${t.tech.map((tech, index) => `
+                <div class="tech-item" data-aos="zoom-in" data-aos-delay="${index * 100}">
+                  <i class="${tech.icon}"></i> ${tech.name}
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- الفوائد -->
+        <section>
+          <div class="container">
+            <h2 data-aos="fade-up">${t.benefitsTitle}</h2>
+            <div class="list-items">
+              ${t.benefits.map((item, index) => `<div class="list-item" data-aos="fade-right" data-aos-delay="${index * 50}"><i class="fas fa-star"></i> ${item}</div>`).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- الخطط المستقبلية -->
+        <section>
+          <div class="container">
+            <h2 data-aos="fade-up">${t.futureTitle}</h2>
+            <div class="list-items">
+              ${t.future.map((item, index) => `<div class="list-item" data-aos="fade-right" data-aos-delay="${index * 50}"><i class="fas fa-rocket"></i> ${item}</div>`).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- الفوتر -->
+        <footer class="footer">
+          <div class="container">
+            <div class="logo" data-aos="fade-up">
+              <div class="logo-icon">💊</div>
+              <div class="logo-text">
+                <h2>${t.designer}</h2>
+                <p>${t.appName}</p>
+              </div>
+            </div>
+            <div class="contact-info" data-aos="fade-up" data-aos-delay="100">
+              <span><i class="fas fa-envelope"></i> ${t.contact.email}</span>
+              <span><i class="fas fa-globe"></i> ${t.contact.website}</span>
+              <span><i class="fas fa-phone"></i> ${t.contact.phone}</span>
+            </div>
+            <a href="../assets/docs/pharmacy-system.pdf" class="download-btn" data-aos="zoom-in">${t.downloadText}</a>
+            <div style="margin: 20px 0;">
+              <span class="badge" style="background: #1e293b; color: #0ea5e9;">${t.footerBadge}</span>
+            </div>
+            <p class="copyright">${t.copyright}</p>
+          </div>
+        </footer>
+      `;
+
+      // تحديث AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+      });
+    }
+
+    // أحداث أزرار اللغة
+    document.getElementById('btn-ar').addEventListener('click', () => {
+      document.getElementById('btn-ar').classList.add('active');
+      document.getElementById('btn-en').classList.remove('active');
+      currentLang = 'ar';
+      renderContent('ar');
+    });
+
+    document.getElementById('btn-en').addEventListener('click', () => {
+      document.getElementById('btn-en').classList.add('active');
+      document.getElementById('btn-ar').classList.remove('active');
+      currentLang = 'en';
+      renderContent('en');
+    });
+
+    // التحميل الأولي
+    renderContent('ar');
+  </script>
+</body>
+</html>

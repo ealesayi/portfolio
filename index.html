@@ -1,539 +1,1953 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="description" content=" Software Engineer specializing in Flutter, Web and Mobile Application Development. Portfolio of Ebrahim Alesayi.">
-  <meta name="keywords" content="Software Engineer, Flutter Developer, Web Developer, Mobile Developer, Portfolio">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ebrahim Alesayi — Software Engineer, Web &amp; Mobile</title>
+<meta name="description" content="Ebrahim Alesayi is a software engineer in Saudi Arabia building web platforms and mobile apps, front end to back end — currently at Jaddaf, previously Ashal.">
+<meta name="author" content="Ebrahim Alesayi">
+<meta name="theme-color" content="#08191F">
+<link rel="canonical" href="https://ealesayi.netlify.app/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ealesayi.netlify.app/">
+<meta property="og:title" content="Ebrahim Alesayi — Software Engineer">
+<meta property="og:description" content="Web platforms and mobile apps, front end to back end, built in Saudi Arabia.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_SA">
+<meta property="og:image" content="https://ealesayi.netlify.app/assets/img/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ebrahim Alesayi, Software Engineer, Web and Mobile">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ealesayi.netlify.app/assets/img/og-card.jpg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23FF6A45'/%3E%3Cg fill='%23fff'%3E%3Crect x='16.5' y='30' width='6' height='15' rx='3'/%3E%3Crect x='41.5' y='30' width='6' height='15' rx='3'/%3E%3Crect x='24.5' y='45' width='6' height='17' rx='3'/%3E%3Crect x='33.5' y='45' width='6' height='17' rx='3'/%3E%3Crect x='21.5' y='27.5' width='21' height='20' rx='7'/%3E%3Cpath fill-rule='evenodd' d='M32 4a12 12 0 1 0 0 24 12 12 0 0 0 0-24zM23.5 12.6h17v3.4a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5z'/%3E%3C/g%3E%3C/svg%3E">
+
+<script>
+/* applied before first paint so the splash opens in the right theme */
+(function(){try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Ebrahim Alesayi",
+  "alternateName":"إبراهيم العيسائي",
+  "jobTitle":"Software Engineer",
+  "email":"mailto:ebrahim.t.alesayi@gmail.com",
+  "address":{"@type":"PostalAddress","addressCountry":"SA"},
+  "knowsLanguage":["ar","en"],
+  "knowsAbout":["Flutter","Angular","React","JavaScript","TypeScript","Node.js","C#","REST APIs","SQL","UI/UX"],
+  "alumniOf":[
+    {"@type":"CollegeOrUniversity","name":"University of Central Lancashire (UCLan)"},
+    {"@type":"CollegeOrUniversity","name":"SEGi University"}
+  ],
+  "sameAs":[
+    "https://github.com/ealesayi",
+    "https://sa.linkedin.com/in/ebrahimmatalesayi",
+    "https://www.instagram.com/e_alesayi/",
+    "https://www.youtube.com/channel/UCSou77la5_4vdW49zFJyF6g"
+  ]
+}
+</script>
+
+<style>
+/* ============================================================
+   Design tokens — "Red Sea ink"
+   Dark is the default; light is a sea-mist ground.
+   ============================================================ */
+:root{
+  --ink:#08191F;
+  --ink-2:#0C232B;
+  --surface:#102E37;
+  --surface-2:#143844;
+  --text:#E9E2D6;
+  --muted:#93A9AD;
+  --line:rgba(233,226,214,.13);
+  --line-strong:rgba(233,226,214,.28);
+  --coral:#FF6A45;
+  --coral-soft:rgba(255,106,69,.14);
+  --sea:#46C2AE;
+  --sea-soft:rgba(70,194,174,.13);
+  --saffron:#F0B93F;
+  --shadow:0 18px 50px -24px rgba(0,0,0,.75);
+  --ring:0 0 0 3px rgba(255,106,69,.45);
+
+  --display:'Bricolage Grotesque','IBM Plex Sans Arabic',system-ui,sans-serif;
+  --body:'IBM Plex Sans','IBM Plex Sans Arabic',system-ui,sans-serif;
+  --mono:'IBM Plex Mono','IBM Plex Sans Arabic',ui-monospace,monospace;
+
+  --s-1:.5rem; --s-2:.75rem; --s-3:1rem; --s-4:1.5rem;
+  --s-5:2rem; --s-6:3rem; --s-7:4.5rem; --s-8:7rem;
+
+  --t--1:.8125rem;
+  --t-0:1rem;
+  --t-1:1.125rem;
+  --t-2:clamp(1.35rem,1.15rem + .9vw,1.75rem);
+  --t-3:clamp(1.9rem,1.4rem + 2.2vw,3rem);
+  --t-4:clamp(2.6rem,1.4rem + 5.4vw,5.5rem);
+
+  --radius:18px;
+  --radius-sm:10px;
+  --maxw:1140px;
+  color-scheme:dark;
+}
+html[data-theme="light"]{
+  --ink:#E9EFED;
+  --ink-2:#F2F6F5;
+  --surface:#FFFFFF;
+  --surface-2:#F6FAF9;
+  --text:#08191F;
+  --muted:#4C666D;
+  --line:rgba(8,25,31,.12);
+  --line-strong:rgba(8,25,31,.26);
+  --coral:#D9491F;
+  --coral-soft:rgba(217,73,31,.09);
+  --sea:#0F7F73;
+  --sea-soft:rgba(15,127,115,.09);
+  --saffron:#B77C09;
+  --shadow:0 16px 40px -26px rgba(8,25,31,.45);
+  --ring:0 0 0 3px rgba(217,73,31,.35);
+  color-scheme:light;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:7rem;-webkit-text-size-adjust:100%}
+body{
+  background:var(--ink);
+  color:var(--text);
+  font-family:var(--body);
+  font-size:var(--t-0);
+  line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  transition:background .35s ease,color .35s ease;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:none;box-shadow:var(--ring);border-radius:6px}
+::selection{background:var(--coral);color:#fff}
+
+.skip{
+  position:absolute;inset-inline-start:1rem;top:-4rem;z-index:200;
+  background:var(--coral);color:#fff;padding:.6rem 1rem;border-radius:8px;
+  transition:top .2s ease;
+}
+.skip:focus{top:1rem}
+
+.wrap{width:min(100% - 2.5rem,var(--maxw));margin-inline:auto}
+@media (max-width:640px){ .wrap{width:min(100% - 2rem,var(--maxw))} }
+
+/* ---------- shared type helpers ---------- */
+.mono{
+  font-family:var(--mono);
+  font-size:var(--t--1);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+[dir="rtl"] .mono{letter-spacing:0}
+.display{font-family:var(--display);font-weight:800;line-height:1.02;letter-spacing:-.03em}
+[dir="rtl"] .display{letter-spacing:0;line-height:1.25}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1);transition-delay:var(--d,0ms)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
+
+/* ---------- scroll progress ---------- */
+#progress{
+  position:fixed;top:0;inset-inline-start:0;height:2px;width:0;
+  background:linear-gradient(90deg,var(--coral),var(--saffron),var(--sea));
+  z-index:120;
+}
+
+/* ============================================================
+   Splash — the astronaut runs while the work it does orbits it.
+   Pure CSS, so it clears itself even if JavaScript never runs.
+   ============================================================ */
+.splash{
+  position:fixed;inset:0;z-index:9999;
+  display:grid;place-items:center;
+  background:var(--ink);
+  animation:splashOut .35s cubic-bezier(.7,0,.3,1) 1.5s forwards;
+}
+.splash-inner{display:grid;justify-items:center;gap:1.1rem}
+.splash-scene{position:relative;width:230px;height:230px}
+
+.runner{
+  /* physical left, not inset-inline-start: the orbs around it are placed with
+     physical coordinates too, so a logical property would shift it in Arabic */
+  position:absolute;left:50%;top:50%;
+  translate:-50% -50%;
+  color:var(--text);
+  animation:runnerIn .5s cubic-bezier(.22,1,.36,1) both;
+}
+.runner .astro-svg{width:38px;height:66px;display:block}
+/* it stands still here — only a slow look left and right */
+.splash .limb,.splash .astro-bob{animation:none}
+.head{transform-box:view-box;transform-origin:32px 16px}
+.runner .head{animation:lookAround 1.5s cubic-bezier(.45,0,.55,1) infinite}
+
+.orb{
+  position:absolute;width:34px;height:34px;
+  display:grid;place-items:center;border-radius:11px;
+  background:var(--surface);border:1px solid var(--line);
+  color:var(--muted);
+  animation:orbIn .5s cubic-bezier(.22,1,.36,1) both;
+}
+.orb .svg{width:17px;height:17px;animation:orbFloat 2.8s ease-in-out infinite}
+.o1{left:98px;top:10px;animation-delay:.12s}
+.o2{left:182px;top:71px;animation-delay:.21s}
+.o3{left:150px;top:169px;animation-delay:.30s}
+.o4{left:46px;top:169px;animation-delay:.39s;color:var(--coral);border-color:color-mix(in srgb,var(--coral) 40%,transparent)}
+.o5{left:14px;top:71px;animation-delay:.48s}
+.o2 .svg{animation-delay:-.5s}.o3 .svg{animation-delay:-1s}.o4 .svg{animation-delay:-1.5s}.o5 .svg{animation-delay:-2s}
+
+.splash-name{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.32em;
+  color:var(--muted);animation:fadeUp .3s ease .55s both;
+}
+.splash-bar{display:block;width:96px;height:2px;border-radius:2px;background:var(--line);overflow:hidden}
+.splash-bar i{
+  display:block;height:100%;width:100%;background:var(--coral);
+  transform:scaleX(0);transform-origin:left;
+  animation:bar .95s linear .35s forwards;
+}
+[dir="rtl"] .splash-bar i{transform-origin:right}
+
+@keyframes runnerIn{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:none}}
+@keyframes orbIn{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:none}}
+@keyframes orbFloat{0%,100%{transform:translateY(-2px)}50%{transform:translateY(2px)}}
+@keyframes lookAround{
+  0%{transform:perspective(240px) rotateY(0deg)}
+  27%{transform:perspective(240px) rotateY(28deg)}
+  60%{transform:perspective(240px) rotateY(-28deg)}
+  88%,100%{transform:perspective(240px) rotateY(0deg)}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes bar{to{transform:scaleX(1)}}
+@keyframes splashOut{to{opacity:0;visibility:hidden;transform:scale(1.03)}}
+@media (max-width:400px){.splash-scene{scale:.86}}
+@media (prefers-reduced-motion:reduce){.splash{display:none}}
+
+/* ============================================================
+   One astronaut, living in the header. On page load it climbs the
+   name next to it, holds on the cap, turns on the spot, then
+   back-flips off and stays put. Clicking it replays the routine.
+   --climb and --shift are measured in JS; --dir mirrors the whole
+   routine for Arabic, both rotations included.
+   ============================================================ */
+.astro-svg .suit,.astro-svg .helmet,.astro-svg .limb rect{fill:currentColor}
+.brand-mark .astro-bob{animation:astroBob 10s linear 1s 1 both}
+.limb,.limb .tuck{transform-box:view-box}
+.arm-l{transform-origin:19.5px 32px;animation:gaitB 10s linear 1s 1 both}
+.arm-r{transform-origin:44.5px 32px;animation:gaitA 10s linear 1s 1 both}
+.leg-l{transform-origin:27.5px 46px;animation:gaitA 10s linear 1s 1 both}
+.leg-r{transform-origin:36.5px 46px;animation:gaitB 10s linear 1s 1 both}
+.arm-l .tuck{transform-origin:19.5px 32px;animation:tuckArmL 10s linear 1s 1 both}
+.arm-r .tuck{transform-origin:44.5px 32px;animation:tuckArmR 10s linear 1s 1 both}
+.leg-l .tuck{transform-origin:27.5px 46px;animation:tuckLegL 10s linear 1s 1 both}
+.leg-r .tuck{transform-origin:36.5px 46px;animation:tuckLegR 10s linear 1s 1 both}
+
+@keyframes astroRoutine{
+  0%{transform:translate(0px,0px) perspective(280px) rotateY(0deg) rotate(0deg) scale(1,1)}
+  7.0%{transform:translate(0px,0px) perspective(280px) rotateY(0deg) rotate(0deg) scale(1,1)}
+  11.71%{transform:translate(calc(var(--shift,30px) * var(--dir,1) * 0.143),calc(var(--climb,32px) * -0.143)) perspective(280px) rotateY(0deg) rotate(0deg) scale(1,1);animation-timing-function:ease-in-out}
+  16.43%{transform:translate(calc(var(--shift,30px) * var(--dir,1) * 0.286),calc(var(--climb,32px) * -0.286)) perspective(280px) rotateY(0deg) rotate(0deg) scale(1,1);animation-timing-function:ease-in-out}
+  21.14%{transform:translate(calc(var(--shift,30px) * var(--dir,1) * 0.429),calc(var(--climb,32px) * -0.429)) perspective(280px) rotateY(0deg) rotate(0deg) scale(1,1);animation-timing-function:ease-in-out}
+  25.86%{transform:translate(calc(var(--shift,30px) * var(--dir,1) * 0.571),calc(var(--climb,32px) * -0.571)) perspective(280px) rotateY(0deg) rotate(0deg) scale(1,1);animation-timing-function:ease-in-out}
+  30.57%{transform:translate(calc(var(--shift,30px) * var(--dir,1) * 0.714),calc(var(--climb,32px) * -0.714)) perspective(280px) rotateY(0deg) rotate(0deg) scale(1,1);animation-timing-function:ease-in-out}
+  35.29%{transform:translate(calc(var(--shift,30px) * var(--dir,1) * 0.857),calc(var(--climb,32px) * -0.857)) perspective(280px) rotateY(0deg) rotate(0deg) scale(1,1);animation-timing-function:ease-in-out}
+  40.0%{transform:translate(calc(var(--shift,30px) * var(--dir,1)),calc(var(--climb,32px) * -1.0)) perspective(280px) rotateY(0deg) rotate(0deg) scale(1,1);animation-timing-function:ease-in-out}
+  47.0%{transform:translate(calc(var(--shift,30px) * var(--dir,1)),calc(var(--climb,32px) * -1)) perspective(280px) rotateY(0deg) rotate(0deg) scale(1,1)}
+  56.0%{transform:translate(calc(var(--shift,30px) * var(--dir,1)),calc(var(--climb,32px) * -1)) perspective(280px) rotateY(calc(360deg * var(--dir,1))) rotate(0deg) scale(1,1);animation-timing-function:cubic-bezier(.5,.02,.5,.98)}
+  59.0%{transform:translate(calc(var(--shift,30px) * var(--dir,1)),calc(var(--climb,32px) * -1)) perspective(280px) rotateY(calc(360deg * var(--dir,1))) rotate(0deg) scale(1.14,0.84);animation-timing-function:cubic-bezier(.2,.8,.35,1)}
+  63.5%{transform:translate(calc(var(--shift,30px) * var(--dir,1) * 0.78),calc(var(--climb,32px) * -1.07)) perspective(280px) rotateY(calc(360deg * var(--dir,1))) rotate(calc(-120deg * var(--dir,1))) scale(1,1);animation-timing-function:linear}
+  66.5%{transform:translate(calc(var(--shift,30px) * var(--dir,1) * 0.55),calc(var(--climb,32px) * -1.12)) perspective(280px) rotateY(calc(360deg * var(--dir,1))) rotate(calc(-200deg * var(--dir,1))) scale(1,1);animation-timing-function:cubic-bezier(.4,0,.85,.5)}
+  70.0%{transform:translate(0px,0px) perspective(280px) rotateY(calc(360deg * var(--dir,1))) rotate(calc(-360deg * var(--dir,1))) scale(1,1)}
+  72.0%{transform:translate(0px,0px) perspective(280px) rotateY(calc(360deg * var(--dir,1))) rotate(calc(-360deg * var(--dir,1))) scale(1.18,0.82)}
+  74%{transform:translate(0px,0px) perspective(280px) rotateY(calc(360deg * var(--dir,1))) rotate(calc(-360deg * var(--dir,1))) scale(1,1)}
+  100%{transform:translate(0px,0px) perspective(280px) rotateY(calc(360deg * var(--dir,1))) rotate(calc(-360deg * var(--dir,1))) scale(1,1)}
+}
+@keyframes gaitA{
+  0%,7.0%{transform:rotate(0deg) scaleY(1)}
+  9.36%{transform:rotate(17deg) scaleY(0.9);animation-timing-function:ease-in-out}
+  11.71%{transform:rotate(0deg) scaleY(1);animation-timing-function:ease-in-out}
+  14.07%{transform:rotate(-15deg) scaleY(1);animation-timing-function:ease-in-out}
+  16.43%{transform:rotate(0deg) scaleY(1);animation-timing-function:ease-in-out}
+  18.79%{transform:rotate(17deg) scaleY(0.9);animation-timing-function:ease-in-out}
+  21.14%{transform:rotate(0deg) scaleY(1);animation-timing-function:ease-in-out}
+  23.5%{transform:rotate(-15deg) scaleY(1);animation-timing-function:ease-in-out}
+  25.86%{transform:rotate(0deg) scaleY(1);animation-timing-function:ease-in-out}
+  28.21%{transform:rotate(17deg) scaleY(0.9);animation-timing-function:ease-in-out}
+  30.57%{transform:rotate(0deg) scaleY(1);animation-timing-function:ease-in-out}
+  32.93%{transform:rotate(-15deg) scaleY(1);animation-timing-function:ease-in-out}
+  35.29%{transform:rotate(0deg) scaleY(1);animation-timing-function:ease-in-out}
+  37.64%{transform:rotate(17deg) scaleY(0.9);animation-timing-function:ease-in-out}
+  40.0%{transform:rotate(0deg) scaleY(1);animation-timing-function:ease-in-out}
+  100%{transform:rotate(0deg) scaleY(1)}
+}
+@keyframes gaitB{
+  0%,7.0%{transform:rotate(0deg) scaleY(1)}
+  9.36%{transform:rotate(-15deg) scaleY(1);animation-timing-function:ease-in-out}
+  11.71%{transform:rotate(0deg) scaleY(1);animation-timing-function:ease-in-out}
+  14.07%{transform:rotate(17deg) scaleY(0.9);animation-timing-function:ease-in-out}
+  16.43%{transform:rotate(0deg) scaleY(1);animation-timing-function:ease-in-out}
+  18.79%{transform:rotate(-15deg) scaleY(1);animation-timing-function:ease-in-out}
+  21.14%{transform:rotate(0deg) scaleY(1);animation-timing-function:ease-in-out}
+  23.5%{transform:rotate(17deg) scaleY(0.9);animation-timing-function:ease-in-out}
+  25.86%{transform:rotate(0deg) scaleY(1);animation-timing-function:ease-in-out}
+  28.21%{transform:rotate(-15deg) scaleY(1);animation-timing-function:ease-in-out}
+  30.57%{transform:rotate(0deg) scaleY(1);animation-timing-function:ease-in-out}
+  32.93%{transform:rotate(17deg) scaleY(0.9);animation-timing-function:ease-in-out}
+  35.29%{transform:rotate(0deg) scaleY(1);animation-timing-function:ease-in-out}
+  37.64%{transform:rotate(-15deg) scaleY(1);animation-timing-function:ease-in-out}
+  40.0%{transform:rotate(0deg) scaleY(1);animation-timing-function:ease-in-out}
+  100%{transform:rotate(0deg) scaleY(1)}
+}
+@keyframes tuckLegL{
+  0%,59%{transform:rotate(0deg) scaleY(1)}
+  62%{transform:rotate(125deg) scaleY(0.78);animation-timing-function:ease-out}
+  67%{transform:rotate(125deg) scaleY(0.78)}
+  69.5%{transform:rotate(0deg) scaleY(1)}
+  100%{transform:rotate(0deg) scaleY(1)}
+}
+@keyframes tuckLegR{
+  0%,59%{transform:rotate(0deg) scaleY(1)}
+  62%{transform:rotate(-125deg) scaleY(0.78);animation-timing-function:ease-out}
+  67%{transform:rotate(-125deg) scaleY(0.78)}
+  69.5%{transform:rotate(0deg) scaleY(1)}
+  100%{transform:rotate(0deg) scaleY(1)}
+}
+@keyframes tuckArmL{
+  0%,59%{transform:rotate(0deg) scaleY(1)}
+  62%{transform:rotate(118deg) scaleY(0.74);animation-timing-function:ease-out}
+  67%{transform:rotate(118deg) scaleY(0.74)}
+  69.5%{transform:rotate(0deg) scaleY(1)}
+  100%{transform:rotate(0deg) scaleY(1)}
+}
+@keyframes tuckArmR{
+  0%,59%{transform:rotate(0deg) scaleY(1)}
+  62%{transform:rotate(-118deg) scaleY(0.74);animation-timing-function:ease-out}
+  67%{transform:rotate(-118deg) scaleY(0.74)}
+  69.5%{transform:rotate(0deg) scaleY(1)}
+  100%{transform:rotate(0deg) scaleY(1)}
+}
+@keyframes astroBob{
+  0%,7.0%{transform:translateY(0)}
+  8.18%{transform:translateY(-1.6px)}
+  10.54%{transform:translateY(-0.4px)}
+  12.89%{transform:translateY(-1.6px)}
+  15.25%{transform:translateY(-0.4px)}
+  17.61%{transform:translateY(-1.6px)}
+  19.96%{transform:translateY(-0.4px)}
+  22.32%{transform:translateY(-1.6px)}
+  24.68%{transform:translateY(-0.4px)}
+  27.04%{transform:translateY(-1.6px)}
+  29.39%{transform:translateY(-0.4px)}
+  31.75%{transform:translateY(-1.6px)}
+  34.11%{transform:translateY(-0.4px)}
+  36.46%{transform:translateY(-1.6px)}
+  38.82%{transform:translateY(-0.4px)}
+  40.0%{transform:translateY(0)}
+  84%{transform:translateY(-1.6px)}
+  100%{transform:translateY(0)}
+}
+/* no name beside it on phones, so nothing to climb */
+@media (max-width:640px){
+  .brand-mark{animation:none;transform:none}
+  .limb,.limb .tuck,.astro-bob{animation:none}
+  .limb{animation:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .brand-mark,.astro-bob,.limb,.limb .tuck{animation:none!important;transform:none!important}
+}
+
+/* ============================================================
+   Nav
+   ============================================================ */
+.nav{
+  position:sticky;top:0;z-index:100;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  background:color-mix(in srgb,var(--ink) 82%,transparent);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s ease,background .3s ease;
+}
+.nav.stuck{border-bottom-color:var(--line)}
+.nav-in{display:flex;align-items:center;gap:var(--s-4);height:6rem}
+.brand{display:flex;align-items:center;gap:.7rem;font-weight:600;letter-spacing:-.01em}
+.brand-mark{
+  flex:none;display:grid;place-items:center;
+  color:var(--coral);
+  /* @keyframes astroRoutine: plays once on load, then holds the rest pose.
+     Click the mark to replay it. */
+  animation:astroRoutine 10s linear 1s 1 both;
+}
+.brand-mark .svg{width:16px;height:27px}
+.brand-mark .astro-svg{width:16px;height:27px}
+[dir="rtl"] .brand-mark{--dir:-1}
+.brand-name{font-size:.95rem}
+.brand-role{display:block;color:var(--muted);font-family:var(--mono);font-size:.68rem;letter-spacing:.09em;text-transform:uppercase}
+[dir="rtl"] .brand-role{letter-spacing:0}
+
+.nav-links{margin-inline-start:auto;display:flex;align-items:center;gap:var(--s-4)}
+.nav-links > a{
+  position:relative;font-size:.92rem;color:var(--muted);
+  padding-block:.35rem;transition:color .2s ease;
+}
+.nav-links > a::after{
+  content:"";position:absolute;inset-inline-start:0;bottom:0;height:1.5px;width:0;
+  background:var(--coral);transition:width .25s ease;
+}
+.nav-links > a:hover,.nav-links > a.current{color:var(--text)}
+.nav-links > a:hover::after,.nav-links > a.current::after{width:100%}
+
+.nav-tools{display:flex;align-items:center;gap:.5rem;margin-inline-start:.5rem}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{
+  background:none;border:0;cursor:pointer;padding:.3rem .7rem;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);
+  transition:background .2s ease,color .2s ease;
+}
+.lang button[aria-pressed="true"]{background:var(--coral);color:#fff}
+.icon-btn{
+  width:36px;height:36px;display:grid;place-items:center;cursor:pointer;
+  border:1px solid var(--line);border-radius:10px;background:none;color:var(--muted);
+  transition:color .2s ease,border-color .2s ease,background .2s ease;
+}
+.icon-btn:hover{color:var(--text);border-color:var(--line-strong);background:var(--surface)}
+.burger{display:none}
+.svg{width:1em;height:1em;fill:currentColor;flex:none}
+
+/* the scrim only exists alongside the drawer */
+.nav-scrim{display:none}
+
+@media (max-width:900px){
+  /* a backdrop-filter makes .nav the containing block for its position:fixed children,
+     which would trap the drawer inside the header — drop it where the drawer lives */
+  .nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--ink)}
+  .nav-in{height:4.2rem}
+  /* the drawer is a child of .nav, so the close button needs to outrank it here */
+  .burger{display:grid;position:relative;z-index:100}
+  .nav.menu-open{background:var(--ink-2)}
+
+  .nav-scrim{
+    display:block;position:fixed;inset:0;z-index:98;
+    background:rgba(3,12,16,.6);
+    opacity:0;visibility:hidden;
+    transition:opacity .3s ease,visibility .3s ease;
+  }
+  .nav-scrim.show{opacity:1;visibility:visible}
+
+  /* slide-in drawer, anchored to the reading-end edge in both directions */
+  .nav-links{
+    position:fixed;z-index:99;
+    inset-block:0;inset-inline-end:0;
+    width:min(82vw,330px);
+    flex-direction:column;align-items:stretch;gap:0;
+    margin-inline-start:0;
+    background:var(--ink-2);
+    border-inline-start:1px solid var(--line);
+    box-shadow:0 0 60px -12px rgba(0,0,0,.7);
+    padding:calc(4.2rem + var(--s-4)) 1.5rem var(--s-5);
+    overflow-y:auto;overscroll-behavior:contain;
+    visibility:hidden;
+    transform:translateX(101%);
+    transition:transform .38s cubic-bezier(.22,1,.36,1),visibility .38s;
+  }
+  [dir="rtl"] .nav-links{transform:translateX(-101%)}
+  .nav-links.open{transform:none;visibility:visible}
+
+  .nav-links > a{
+    padding-block:.95rem;border-bottom:1px solid var(--line);
+    font-size:1.05rem;color:var(--text);
+  }
+  .nav-links > a::after{display:none}
+  .nav-links > a.current{color:var(--coral)}
+  /* auto margins on both sides centre the controls and push the menu to the corner */
+  .nav-tools{margin-inline:auto}
+  .burger{margin-inline-start:0}
+  .lang button{padding:.45rem 1rem;min-height:44px}
+  .icon-btn{width:44px;height:44px}
+}
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero{padding-block:clamp(2.25rem,5vw,4rem) clamp(2rem,4vw,3.25rem);position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;z-index:-1;
+  width:46rem;height:46rem;border-radius:50%;
+  inset-block-start:-22rem;inset-inline-end:-16rem;
+  background:radial-gradient(circle,var(--coral-soft),transparent 62%);
+  pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+
+/* signature: the name set twice, once per script — outline above, solid below */
+.name{position:relative;font-size:var(--t-4);margin-bottom:.4rem;margin-top:.25rem}
+.name-ghost{
+  display:block;font-size:.3em;font-weight:600;line-height:1.3;
+  color:transparent;-webkit-text-stroke:1px var(--line-strong);
+  margin-bottom:.1em;
+}
+.name-solid{display:block}
+
+.role{
+  font-family:var(--mono);font-size:clamp(.95rem,.85rem + .4vw,1.15rem);
+  color:var(--coral);letter-spacing:.04em;min-height:1.7em;margin-bottom:var(--s-3);
+}
+.role .caret{display:inline-block;width:.6ch;background:var(--coral);color:transparent;animation:blink 1.05s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+.pitch{color:var(--muted);max-width:46ch;font-size:var(--t-1);margin-bottom:var(--s-4)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:var(--s-5)}
+
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;
+  padding:.8rem 1.35rem;border-radius:999px;border:1px solid transparent;
+  font-weight:500;font-size:.95rem;
+  transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease;
+}
+.btn-primary{background:var(--coral);color:#fff}
+.btn-primary:hover{transform:translateY(-2px);background:color-mix(in srgb,var(--coral) 86%,#000)}
+.btn-ghost{border-color:var(--line-strong);color:var(--text)}
+.btn-ghost:hover{transform:translateY(-2px);border-color:var(--coral);color:var(--coral)}
+
+.hero-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3);border-top:1px solid var(--line);padding-top:var(--s-4)}
+.fact dt{color:var(--muted);font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+[dir="rtl"] .fact dt{letter-spacing:0}
+.fact dd{font-size:.92rem;font-weight:500}
+
+/* portrait */
+.portrait{position:relative;justify-self:center;width:min(100%,360px)}
+.portrait-frame{
+  position:absolute;inset:0;border:1px solid var(--coral);border-radius:var(--radius);
+  transform:translate(14px,14px);
+}
+[dir="rtl"] .portrait-frame{transform:translate(-14px,14px)}
+.portrait img{
+  position:relative;border-radius:var(--radius);width:100%;height:auto;
+  aspect-ratio:1024/1203;object-fit:cover;
+  border:1px solid var(--line);background:var(--surface);
+}
+.portrait-tag{
+  position:absolute;inset-block-end:-.9rem;inset-inline-start:-.9rem;
+  background:var(--ink-2);border:1px solid var(--line);border-radius:999px;
+  padding:.45rem .9rem;color:var(--muted);box-shadow:var(--shadow);
+}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:var(--s-5)}
+  .portrait{order:-1;width:min(100%,260px);justify-self:start}
+}
+@media (max-width:520px){
+  .hero-facts{grid-template-columns:1fr;gap:var(--s-2)}
+  .fact{display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+  .fact dt{margin-bottom:0}
+}
+
+/* ============================================================
+   Metrics strip
+   ============================================================ */
+.metrics{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--ink-2);overflow:hidden;
+}
+.metric{padding:var(--s-4) var(--s-3);text-align:center;border-inline-start:1px solid var(--line)}
+.metric:first-child{border-inline-start:0}
+.metric b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,1.2rem + 1.8vw,2.5rem);letter-spacing:-.03em;color:var(--text)}
+.metric span{color:var(--muted);font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+[dir="rtl"] .metric span{letter-spacing:0}
+@media (max-width:640px){
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .metric:nth-child(odd){border-inline-start:0}
+  .metric:nth-child(n+3){border-top:1px solid var(--line)}
+}
+
+/* ============================================================
+   Section shell
+   ============================================================ */
+.sec{padding-block:clamp(2.25rem,4.5vw,4rem)}
+.sec-head{max-width:60ch;margin-bottom:clamp(1.4rem,2.4vw,2.1rem)}
+.eyebrow{display:flex;align-items:center;gap:.7rem;color:var(--coral);margin-bottom:var(--s-2)}
+.eyebrow::before{content:"";width:28px;height:1.5px;background:var(--coral);flex:none}
+.sec-title{font-family:var(--display);font-weight:800;font-size:var(--t-3);letter-spacing:-.03em;line-height:1.08}
+[dir="rtl"] .sec-title{letter-spacing:0;line-height:1.3}
+.sec-lede{color:var(--muted);margin-top:var(--s-3);font-size:var(--t-1)}
+
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(1.35rem,2.6vw,2rem);
+  transition:border-color .25s ease,transform .25s ease,background .25s ease;
+}
+
+/* ============================================================
+   About
+   ============================================================ */
+.about{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(1.25rem,3vw,2.5rem);align-items:start}
+.about-body p + p{margin-top:var(--s-3)}
+.about-body p{color:var(--muted)}
+.about-body .lead{color:var(--text);font-size:var(--t-1)}
+.about-body .lead b{font-weight:600;color:var(--coral)}
+.facts{display:grid;gap:0}
+.facts div{display:flex;gap:.85rem;align-items:baseline;padding-block:.7rem;border-bottom:1px solid var(--line)}
+.facts div:last-child{border-bottom:0;padding-bottom:0}
+.facts dt{color:var(--muted);font-family:var(--mono);font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;width:6.5rem;flex:none}
+[dir="rtl"] .facts dt{letter-spacing:0;width:7rem}
+.facts dd{font-size:.92rem;overflow-wrap:anywhere}
+@media (max-width:820px){ .about{grid-template-columns:1fr} }
+
+/* ============================================================
+   Experience — the chronology is real, so it is numbered by year
+   ============================================================ */
+.exp{display:grid;grid-template-columns:1.55fr .95fr;gap:clamp(1.5rem,3vw,3rem);align-items:start}
+.rail{position:relative;padding-inline-start:1.9rem}
+.rail::before{content:"";position:absolute;inset-block:.65rem 2.2rem;inset-inline-start:5px;width:1px;background:var(--line)}
+.job{position:relative;padding-bottom:var(--s-5)}
+.job:last-child{padding-bottom:0}
+.job::before{
+  content:"";position:absolute;inset-block-start:.55rem;inset-inline-start:-1.9rem;
+  width:11px;height:11px;border-radius:50%;
+  background:var(--ink);border:2px solid var(--line-strong);
+}
+.job.now::before{background:var(--coral);border-color:var(--coral);box-shadow:0 0 0 5px var(--coral-soft)}
+.job-when{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;color:var(--muted);margin-bottom:.35rem}
+.chip-now{
+  background:var(--coral-soft);color:var(--coral);border:1px solid color-mix(in srgb,var(--coral) 35%,transparent);
+  border-radius:999px;padding:.1rem .55rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;
+}
+[dir="rtl"] .chip-now{letter-spacing:0}
+.job h3{font-family:var(--display);font-weight:600;font-size:var(--t-2);letter-spacing:-.02em;line-height:1.2}
+[dir="rtl"] .job h3{letter-spacing:0}
+.job-org{color:var(--sea);font-weight:500;font-size:.95rem;margin-bottom:.7rem;display:inline-flex;align-items:center;gap:.4rem}
+.job-org a{border-bottom:1px solid transparent;transition:border-color .2s ease}
+.job-org a:hover{border-bottom-color:currentColor}
+.job ul{list-style:none;display:grid;gap:.45rem;margin-bottom:.9rem}
+.job li{position:relative;padding-inline-start:1.15rem;color:var(--muted);font-size:.95rem}
+.job li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:6px;height:1.5px;background:var(--coral)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tag{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;
+  border:1px solid var(--line);border-radius:6px;padding:.2rem .5rem;color:var(--muted);
+}
+[dir="rtl"] .tag{letter-spacing:0}
+.tag.hl{color:var(--sea);border-color:color-mix(in srgb,var(--sea) 40%,transparent);background:var(--sea-soft)}
+
+.aside-stack{display:grid;gap:var(--s-3)}
+.edu-item + .edu-item{margin-top:var(--s-4);padding-top:var(--s-4);border-top:1px solid var(--line)}
+.edu-item h4{font-weight:600;font-size:1rem;margin-bottom:.2rem}
+.edu-item p{color:var(--muted);font-size:.9rem}
+.cv-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:var(--s-4)}
+.cv-row .btn{padding:.65rem 1.1rem;font-size:.88rem}
+@media (max-width:900px){ .exp{grid-template-columns:1fr} }
+
+/* ============================================================
+   Skills — grouped capability sets (no arbitrary star ratings)
+   ============================================================ */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:var(--s-3)}
+.skill-group:hover{border-color:var(--line-strong);transform:translateY(-3px)}
+.skill-group h3{display:flex;align-items:center;gap:.6rem;font-family:var(--body);font-weight:600;font-size:1rem;margin-bottom:.9rem}
+.skill-group h3 .svg{color:var(--coral);font-size:1.1rem}
+.skill-group .tags{gap:.45rem}
+
+/* ============================================================
+   Work
+   ============================================================ */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:var(--s-4)}
+.filter{
+  cursor:pointer;background:none;border:1px solid var(--line);border-radius:999px;
+  padding:.42rem .95rem;color:var(--muted);
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+  transition:color .2s ease,border-color .2s ease,background .2s ease;
+}
+[dir="rtl"] .filter{letter-spacing:0}
+.filter:hover{color:var(--text);border-color:var(--line-strong)}
+.filter[aria-pressed="true"]{background:var(--coral);border-color:var(--coral);color:#fff}
+
+.work{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--s-3)}
+.proj{
+  display:flex;flex-direction:column;overflow:hidden;padding:0;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;
+}
+.proj:hover{transform:translateY(-4px);border-color:var(--line-strong);box-shadow:var(--shadow)}
+.proj.hide{display:none}
+
+/* generated cover: a tinted field + outlined initial + domain */
+.cover{
+  position:relative;aspect-ratio:16/10;overflow:hidden;
+  display:grid;place-items:center;
+  border-bottom:1px solid var(--line);
+  background:
+    linear-gradient(150deg,color-mix(in srgb,var(--hue) 26%,var(--surface)),var(--surface) 72%);
+}
+.cover::after{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:34px 34px;
+  mask-image:radial-gradient(circle at 30% 25%,#000,transparent 78%);
+  -webkit-mask-image:radial-gradient(circle at 30% 25%,#000,transparent 78%);
+  opacity:.55;
+}
+.cover-initial{
+  font-family:var(--display);font-weight:800;font-size:clamp(3.2rem,9vw,4.6rem);
+  letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px var(--hue);opacity:.9;
+}
+.cover-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:.9}
+.cover-domain{
+  position:absolute;inset-block-end:.7rem;inset-inline-start:.85rem;z-index:2;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;
+  color:var(--text);background:color-mix(in srgb,var(--ink) 72%,transparent);
+  border:1px solid var(--line);border-radius:6px;padding:.16rem .5rem;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+[dir="rtl"] .cover-domain{letter-spacing:0;direction:ltr}
+.cover-kind{
+  position:absolute;inset-block-start:.7rem;inset-inline-end:.85rem;z-index:2;
+  width:30px;height:30px;border-radius:8px;display:grid;place-items:center;
+  background:color-mix(in srgb,var(--ink) 72%,transparent);border:1px solid var(--line);color:var(--hue);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.proj-body{padding:1.15rem 1.25rem 1.35rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.proj-org{color:var(--muted);font-family:var(--mono);font-size:.68rem;letter-spacing:.09em;text-transform:uppercase}
+[dir="rtl"] .proj-org{letter-spacing:0}
+.proj h3{font-weight:600;font-size:1.08rem;line-height:1.3}
+.proj p{color:var(--muted);font-size:.9rem;flex:1}
+.proj .tags{margin-top:.15rem}
+.proj-link{
+  display:inline-flex;align-items:center;gap:.4rem;margin-top:.4rem;
+  color:var(--coral);font-size:.88rem;font-weight:500;
+}
+.proj-link .svg{transition:transform .2s ease}
+.proj-link:hover .svg{transform:translateX(3px)}
+[dir="rtl"] .proj-link:hover .svg{transform:translateX(-3px) scaleX(-1)}
+[dir="rtl"] .proj-link .svg{transform:scaleX(-1)}
+
+/* ============================================================
+   Services
+   ============================================================ */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--s-3)}
+.service{position:relative;overflow:hidden}
+.service:hover{transform:translateY(-3px);border-color:var(--line-strong)}
+.service .svg{font-size:1.5rem;color:var(--coral);margin-bottom:.9rem}
+.service h3{font-weight:600;font-size:1.05rem;margin-bottom:.4rem}
+.service p{color:var(--muted);font-size:.9rem}
 
 
-  <title>Portfolio Ebrahim- Alesayi</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-  <link href="assets/img/apple-touch-icon.JPG" rel="icon">
-  <link href="assets/img/apple-touch-icon.JPG" rel="apple-touch-icon">
+/* ============================================================
+   Contact
+   ============================================================ */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--s-4);align-items:start}
+.reach{display:grid;gap:0;margin-bottom:var(--s-4)}
+.reach a,.reach div{display:flex;align-items:center;gap:.85rem;padding-block:.8rem;border-bottom:1px solid var(--line)}
+.reach a:last-child,.reach div:last-child{border-bottom:0}
+.reach .svg{color:var(--coral);font-size:1.05rem}
+.reach b{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:400}
+[dir="rtl"] .reach b{letter-spacing:0}
+.reach span{font-size:.93rem;overflow-wrap:anywhere}
+.socials{display:flex;gap:.5rem;flex-wrap:wrap}
+.socials a{
+  width:40px;height:40px;border-radius:10px;display:grid;place-items:center;
+  border:1px solid var(--line);color:var(--muted);
+  transition:color .2s ease,border-color .2s ease,transform .2s ease,background .2s ease;
+}
+.socials a:hover{color:var(--coral);border-color:var(--coral);transform:translateY(-2px);background:var(--coral-soft)}
 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+.field{display:grid;gap:.35rem;margin-bottom:var(--s-3)}
+.field label{font-family:var(--mono);font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+[dir="rtl"] .field label{letter-spacing:0}
+.field input,.field textarea,.field select{
+  width:100%;background:var(--ink-2);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:.8rem .9rem;font-size:.95rem;transition:border-color .2s ease,background .2s ease;
+}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--coral);outline:none;box-shadow:none}
+.field select{
+  appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237E9298'%3E%3Cpath d='M12 15.4 5.6 9l1.4-1.4 5 5 5-5L18.4 9z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-size:18px;
+  background-position:right .85rem center;padding-inline-end:2.3rem;
+}
+[dir="rtl"] .field select{background-position:left .85rem center;padding-inline-end:.9rem;padding-inline-start:2.3rem}
+.field textarea{resize:vertical;min-height:7rem}
+.form-note{color:var(--muted);font-size:.8rem;margin-top:.75rem}
+@media (max-width:820px){ .contact{grid-template-columns:1fr} }
 
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
-
+/* ============================================================
+   Footer + back to top
+   ============================================================ */
+.foot{border-top:1px solid var(--line);margin-top:var(--s-5);padding-block:var(--s-4)}
+.foot-in{display:flex;flex-wrap:wrap;gap:var(--s-3);align-items:center;justify-content:space-between;color:var(--muted)}
+.foot-in a:hover{color:var(--coral)}
+#toTop{
+  position:fixed;inset-block-end:1.25rem;inset-inline-end:1.25rem;z-index:90;
+  width:44px;height:44px;border-radius:12px;cursor:pointer;
+  background:var(--coral);color:#fff;border:0;display:grid;place-items:center;
+  opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .3s ease,transform .3s ease,visibility .3s;
+  box-shadow:var(--shadow);
+}
+#toTop.show{opacity:1;visibility:visible;transform:none}
+/* ============================================================
+   Small screens — spacing, tap targets, and no iOS focus zoom
+   ============================================================ */
+@media (max-width:640px){
+  /* the full name is the first thing in the hero, so the bar keeps only the mark */
+  .brand-name,.brand-role{display:none}
+  .hero{padding-block:2.5rem 3rem}
+  .hero-cta .btn{flex:1 1 auto;justify-content:center}
+  .socials a{width:44px;height:44px}
+  .filters{gap:.4rem}
+  .filter{padding:.45rem .85rem;min-height:42px}
+  .proj-link,.reach a{min-height:44px}
+  /* 16px keeps iOS Safari from zooming the page when a field is focused */
+  .field input,.field textarea,.field select{font-size:16px}
+  .work{grid-template-columns:1fr}
+  .cover{aspect-ratio:16/11}
+}
+@media (max-width:440px){
+  .facts div{flex-direction:column;gap:.15rem;align-items:flex-start}
+  .facts dt{width:auto}
+  .metrics{grid-template-columns:1fr}
+  .metric{border-inline-start:0;border-top:1px solid var(--line)}
+  .metric:first-child{border-top:0}
+  .metric:nth-child(n+3){border-top:1px solid var(--line)}
+  .portrait{width:min(100%,220px)}
+  .rail{padding-inline-start:1.5rem}
+  .job::before{inset-inline-start:-1.5rem}
+}
+/* long domains must not spill out of a project cover */
+.cover-domain{max-width:calc(100% - 1.7rem);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+</style>
 </head>
-
 <body>
-
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-
-  <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <img src="assets/img/6.jpeg" alt="" class="img-fluid rounded-circle">  
-        <h1 class="text-light"><a href="index.html"> Ebrahim Alesayi</a></h1>
-        <div class="social-links mt-3 text-center">
-
-          <a href="https://wa.me/601162237848" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
-          <a href="https://www.youtube.com/channel/UCSou77la5_4vdW49zFJyF6g" class="youtube"><i class="bx bxl-youtube"></i></a>
-          <a href="https://www.instagram.com/e_alesayi/" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="https://sa.linkedin.com/in/ebrahimmatalesayi" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-      </div>
-      
-
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projects</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bi bi-envelope"></i> <span>contact</span></a></li>
-        </ul>
-      </nav>
-  </header>
-
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Ebrahim Alesayi</h1>
-      <p>I'm a <span class="typed" data-typed-items="Software Engineer, Flutter Developer, Web & Mobile Developer"></span></p>
-
+<div class="splash" id="splash" aria-hidden="true">
+  <div class="splash-inner">
+    <div class="splash-scene">
+      <span class="orb o1"><svg class="svg"><use href="#i-browser"/></svg></span>
+      <span class="orb o2"><svg class="svg"><use href="#i-mobile"/></svg></span>
+      <span class="orb o3"><svg class="svg"><use href="#i-seo"/></svg></span>
+      <span class="orb o4"><svg class="svg"><use href="#i-tags"/></svg></span>
+      <span class="orb o5"><svg class="svg"><use href="#i-braces"/></svg></span>
+      <span class="runner"><svg class="astro-svg" viewBox="14 2 36 62" fill="none">
+          <g class="astro-bob">
+            <g class="limb arm-l"><rect x="16.5" y="30" width="6" height="15" rx="3"/></g>
+            <g class="limb arm-r"><rect x="41.5" y="30" width="6" height="15" rx="3"/></g>
+            <g class="limb leg-l"><rect x="24.5" y="45" width="6" height="17" rx="3"/></g>
+            <g class="limb leg-r"><rect x="33.5" y="45" width="6" height="17" rx="3"/></g>
+            <rect class="suit" x="21.5" y="27.5" width="21" height="20" rx="7"/>
+            <g class="head"><path class="helmet" fill-rule="evenodd" clip-rule="evenodd" d="M32 4a12 12 0 1 0 0 24 12 12 0 0 0 0-24zM23.5 12.6h17v3.4a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5z"/></g>
+          </g>
+        </svg></span>
     </div>
-  </section>
+    <p class="splash-name">EBRAHIM ALESAYI</p>
+    <span class="splash-bar"><i></i></span>
+  </div>
+</div>
 
-  <main id="main">
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+<div id="progress"></div>
 
-    <section id="about" class="about">
-      <div class="container">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7l1.4-1.4L10.6 10.6l6.3-6.3z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-13.5a1 1 0 0 1 1 1V6a1 1 0 1 1-2 0V4.5a1 1 0 0 1 1-1zm0 15a1 1 0 0 1 1 1V21a1 1 0 1 1-2 0v-1.5a1 1 0 0 1 1-1zM3.5 12a1 1 0 0 1 1-1H6a1 1 0 1 1 0 2H4.5a1 1 0 0 1-1-1zm14.5 0a1 1 0 0 1 1-1h1.5a1 1 0 1 1 0 2H19a1 1 0 0 1-1-1zM5.6 5.6a1 1 0 0 1 1.4 0l1.1 1.1a1 1 0 0 1-1.4 1.4L5.6 7a1 1 0 0 1 0-1.4zm10.3 10.3a1 1 0 0 1 1.4 0l1.1 1.1a1 1 0 0 1-1.4 1.4l-1.1-1.1a1 1 0 0 1 0-1.4zm2.5-10.3a1 1 0 0 1 0 1.4L17.3 8.1a1 1 0 1 1-1.4-1.4L17 5.6a1 1 0 0 1 1.4 0zM8.1 15.9a1 1 0 0 1 0 1.4L7 18.4A1 1 0 0 1 5.6 17l1.1-1.1a1 1 0 0 1 1.4 0z"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+<symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 4l7 7-1.4 1.4L13 7.8V20h-2V7.8L6.4 12.4 5 11z"/></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M13 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2l-4.6-4.6z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm17 3.2-7.9 5.3a.9.9 0 0 1-1 0L4 8.2V17h16zM4.6 7l7.4 5 7.4-5z"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7zm0 9.5A2.5 2.5 0 1 0 12 6.5a2.5 2.5 0 0 0 0 5z"/></symbol>
+<symbol id="i-mobile" viewBox="0 0 24 24"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 4v12h10V6zm4 13h2v1h-2z"/></symbol>
+<symbol id="i-brand" viewBox="14 2 36 62"><rect x="16.5" y="30" width="6" height="15" rx="3"/><rect x="41.5" y="30" width="6" height="15" rx="3"/><rect x="24.5" y="45" width="6" height="17" rx="3"/><rect x="33.5" y="45" width="6" height="17" rx="3"/><rect x="21.5" y="27.5" width="21" height="20" rx="7"/><path fill-rule="evenodd" clip-rule="evenodd" d="M32 4a12 12 0 1 0 0 24 12 12 0 0 0 0-24zM23.5 12.6h17v3.4a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5z"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="M8.7 6.3 3 12l5.7 5.7 1.4-1.4L5.8 12l4.3-4.3zm6.6 0-1.4 1.4L18.2 12l-4.3 4.3 1.4 1.4L21 12z"/></symbol>
+<symbol id="i-server" viewBox="0 0 24 24"><path d="M4 3h16a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm2 3v1h2V6zm-2 8h16a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1zm2 3v1h2v-1z"/></symbol>
+<symbol id="i-gauge" viewBox="0 0 24 24"><path d="M12 4a9 9 0 0 1 7.9 13.3l-1.7-1a7 7 0 1 0-12.4 0l-1.7 1A9 9 0 0 1 12 4zm3.6 4.6 1.4 1.4-3.3 3.3a2 2 0 1 1-1.4-1.4z"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5zm0 12.2 7.1-3.9 1.9 1-9 5-9-5 1.9-1zm0 4.3 7.1-3.9 1.9 1-9 5-9-5 1.9-1z"/></symbol>
+<symbol id="i-browser" viewBox="0 0 24 24"><path d="M3 4h18a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm1 2v1.6h16V6zm0 3.6V18h16V9.6z"/></symbol>
+<symbol id="i-seo" viewBox="0 0 24 24"><path d="M10.5 2a8.5 8.5 0 1 1 0 17 8.5 8.5 0 0 1 0-17zm0 2a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zm5.6 12.7 1.5-1.5 4.4 4.4-1.5 1.5zM7.2 10.9h1.5v3.4H7.2zm2.6-2.1h1.5v5.5H9.8zm2.6-1.7h1.5v7.2h-1.5z"/></symbol>
+<symbol id="i-braces" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M9.8 3.6c-2.4 0-2 3.4-2 5S6.3 11.9 5 11.9s2.8.6 2.8 3.3-.4 5 2 5M14.2 3.6c2.4 0 2 3.4 2 5s1.5 3.3 2.8 3.3-2.8.6-2.8 3.3.4 5-2 5"/></symbol>
+<symbol id="i-tags" viewBox="0 0 24 24"><path d="M9.6 5.9 3.5 12l6.1 6.1 1.4-1.4L6.3 12l4.7-4.7zM14.4 5.9 20.5 12l-6.1 6.1-1.4-1.4 4.7-4.7-4.7-4.7z"/><path d="M13.9 4.3 12.2 4l-2.1 15.7 1.7.3z"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24"><path d="M12 2 2.6 6.8v10.4L12 22l9.4-4.8V6.8zm0 2.2 6.4 3.3-2.2 1.1-6.4-3.3zm-4.5 2.3 6.4 3.3-1.9 1L5.6 7.5zM4.6 9.1l6.4 3.3v6.9l-6.4-3.3zm14.8 0v6.9L13 19.3v-6.9z"/></symbol>
+<symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 3h3l.7 3H21l-2.2 8H8.1L7.6 16H19v2H6l-.8-3.4L3.4 5H3zm5.1 5 .9 4h8.3l1.1-4zM8 19a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm9 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm6.9 9h-3a15 15 0 0 0-1.3-5.7A8 8 0 0 1 18.9 11zM12 4.2c.8 1.2 1.6 3.4 1.8 6.8h-3.6c.2-3.4 1-5.6 1.8-6.8zM9.4 5.3A15 15 0 0 0 8.1 11h-3a8 8 0 0 1 4.3-5.7zM5.1 13h3a15 15 0 0 0 1.3 5.7A8 8 0 0 1 5.1 13zm6.9 6.8c-.8-1.2-1.6-3.4-1.8-6.8h3.6c-.2 3.4-1 5.6-1.8 6.8zm2.6-1.1a15 15 0 0 0 1.3-5.7h3a8 8 0 0 1-4.3 5.7z"/></symbol>
+<symbol id="i-pill" viewBox="0 0 24 24"><path d="M17 2a5 5 0 0 1 3.5 8.5l-10 10A5 5 0 1 1 3.5 13.5l10-10A5 5 0 0 1 17 2zm-4.9 5.6-6.2 6.2a3 3 0 1 0 4.3 4.3l6.2-6.2z"/></symbol>
+<symbol id="i-scissors" viewBox="0 0 24 24"><path d="M9.6 6.6a3 3 0 1 0-1.4 1.4l2.4 2.4-2.4 2.4a3 3 0 1 0 1.4 1.4L12 11.8l6.4 6.4L20 16.8 10.6 7.4zM6 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0 12a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM20 5.8 13.4 12.4l1.4 1.4L20 8.6z"/></symbol>
+<symbol id="i-car" viewBox="0 0 24 24"><path d="M5 11l1.6-4.4A2 2 0 0 1 8.5 5h7a2 2 0 0 1 1.9 1.6L19 11h1a1 1 0 0 1 1 1v5h-2v2h-3v-2H8v2H5v-2H3v-5a1 1 0 0 1 1-1zm2.1 0h9.8l-1.2-3.4a1 1 0 0 0-.9-.6H9.2a1 1 0 0 0-.9.6zM6.5 13a1.2 1.2 0 1 0 0 2.5 1.2 1.2 0 0 0 0-2.5zm11 0a1.2 1.2 0 1 0 0 2.5 1.2 1.2 0 0 0 0-2.5z"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M11 3h2v9.2l3.6-3.6L18 10l-6 6-6-6 1.4-1.4L11 12.2zM5 19h14v2H5z"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M12 5c5 0 9 4.4 10 7-1 2.6-5 7-10 7S3 14.6 2 12c1-2.6 5-7 10-7zm0 2c-3.5 0-6.6 3-7.8 5 1.2 2 4.3 5 7.8 5s6.6-3 7.8-5c-1.2-2-4.3-5-7.8-5zm0 1.8a3.2 3.2 0 1 1 0 6.4 3.2 3.2 0 0 1 0-6.4z"/></symbol>
+<symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></symbol>
+<symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M6.9 8.5v11.6H3.2V8.5zM5 3a2.1 2.1 0 1 1 0 4.3A2.1 2.1 0 0 1 5 3zm4.2 5.5h3.5v1.6a3.9 3.9 0 0 1 3.5-1.9c3 0 4.6 1.9 4.6 5.5v6.4h-3.7v-5.7c0-1.8-.6-3-2.2-3-1.2 0-1.9.8-2.2 1.6l-.1 1v6.1H9.2z"/></symbol>
+<symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 2a8 8 0 0 1 0 16 8 8 0 0 1-4.2-1.2l-.3-.2-2.5.7.7-2.4-.2-.3A8 8 0 0 1 12 4zm-3.6 4c-.2 0-.5.1-.7.4-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.2.2-.3.2-.5.1a7 7 0 0 1-2-1.3 8 8 0 0 1-1.5-1.8c-.1-.3 0-.4.1-.5l.4-.5.3-.5v-.4L9.2 8.4c-.2-.4-.4-.4-.5-.4z"/></symbol>
+<symbol id="i-instagram" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1 0-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.3-.6.7-.8 1.2-.2.4-.4 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c0 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.3.4.7.6 1.2.8.4.2 1 .4 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1 0 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.3.6-.7.8-1.2.2-.4.4-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c0-1.1-.2-1.7-.4-2.1a3.2 3.2 0 0 0-.8-1.2 3.2 3.2 0 0 0-1.2-.8c-.4-.2-1-.4-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2zm5.1-3.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></symbol>
+<symbol id="i-youtube" viewBox="0 0 24 24"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15.1V8.9l5.2 3.1z"/></symbol>
+</defs></svg>
 
-        <div class="section-title">
-          <h2>About</h2>
-          <p>
-            Software Engineer specializing in <strong>Flutter mobile development</strong> and modern web applications.
-            Dual Degree graduate (Malaysia & UK) with hands-on experience through internships and freelance projects.
-            Focused on building scalable, user-friendly, and high-performance solutions.
-            </p>
-            
-        </div>
+<!-- ============================ NAV ============================ -->
+<header class="nav" id="nav">
+  <nav class="wrap nav-in" aria-label="Primary">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"><svg class="astro-svg" viewBox="14 2 36 62" fill="none">
+        <g class="astro-bob">
+          <g class="limb arm-l"><g class="tuck"><rect x="16.5" y="30" width="6" height="15" rx="3"/></g></g>
+          <g class="limb arm-r"><g class="tuck"><rect x="41.5" y="30" width="6" height="15" rx="3"/></g></g>
+          <g class="limb leg-l"><g class="tuck"><rect x="24.5" y="45" width="6" height="17" rx="3"/></g></g>
+          <g class="limb leg-r"><g class="tuck"><rect x="33.5" y="45" width="6" height="17" rx="3"/></g></g>
+          <rect class="suit" x="21.5" y="27.5" width="21" height="20" rx="7"/>
+          <g class="head"><path class="helmet" fill-rule="evenodd" clip-rule="evenodd" d="M32 4a12 12 0 1 0 0 24 12 12 0 0 0 0-24zM23.5 12.6h17v3.4a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5z"/></g>
+        </g>
+      </svg></span>
+      <span>
+        <span class="brand-name" data-i18n="brand_name">Ebrahim Alesayi</span>
+        <span class="brand-role" data-i18n="brand_role">Software Engineer</span>
+      </span>
+    </a>
 
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-          </div>
-         
-            <h3>Software Engineer | Flutter & Web Developer</h3>
+    <div class="nav-links" id="navLinks">
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#experience" data-i18n="nav_experience">Experience</a>
+      <a href="#work" data-i18n="nav_work">Work</a>
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </div>
 
-            <p class="fst-italic">
-              I focus on building clean, responsive, and user-friendly interfaces
-              while ensuring strong performance and scalable architecture across web
-              and mobile applications.
-              </p>
-              
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>ebrahim.t.alesayi@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>0553658309</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Jeddah</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Dual Degree:</strong> <span>Bachelor Of IT Software Engineer</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>languages:</strong> <span>Arabic: Native &
-                    English: Advanced
-                    </span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>28</span></li>
-
-                </ul>
-              </div>
-
-              <section id="skills" class="skills section-bg">
-                <div class="container">
-          
-                  <div class="section-title">
-                    <h2>Skills</h2>
-                    <p></p>
-                  </div>
-          
-                  <div class="row skills-content">
-          
-                    <div class="col-lg-6" data-aos="fade-up">
-          
-                      <div class="progress">
-                        <span class="skill">HTML <i class="val">80%</i></span>
-                        <div class="progress-bar-wrap">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="80"></div>
-                        </div>
-                      </div>
-          
-                      <div class="progress">
-                        <span class="skill">CSS <i class="val">70%</i></span>
-                        <div class="progress-bar-wrap">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-          
-                      <div class="progress">
-                        <span class="skill">JavaScript <i class="val">75%</i></span>
-                        <div class="progress-bar-wrap">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-          
-                    </div>
-          
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          
-                      <div class="progress">
-                        <span class="skill">SQL <i class="val">65%</i></span>
-                        <div class="progress-bar-wrap">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-          
-                      <div class="progress">
-                        <span class="skill">Python<i class="val">60%</i></span>
-                        <div class="progress-bar-wrap">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-          
-                      <div class="progress">
-                        <span class="skill">Photoshop <i class="val">55%</i></span>
-                        <div class="progress-bar-wrap">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </div>
-          
-                    </div>
-          
-                  </div>
-          
-                </div>
-              </section>
-            </div>
-            <p>
-            </p>
-          </div>
-        </div>
+    <div class="nav-tools">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" id="langEn" aria-pressed="true">EN</button>
+        <button type="button" id="langAr" aria-pressed="false">ع</button>
       </div>
-    </section>
+      <button type="button" class="icon-btn" id="themeBtn" aria-label="Switch theme">
+        <svg class="svg" aria-hidden="true"><use href="#i-sun"/></svg>
+      </button>
+    </div>
 
-    <section id="resume" class="resume">
-      <div class="container">
+    <button type="button" class="icon-btn burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+      <svg class="svg" aria-hidden="true"><use href="#i-menu"/></svg>
+    </button>
+  </nav>
+</header>
+<div class="nav-scrim" id="navScrim"></div>
 
-        <div class="section-title">
-          <h2>Resume</h2>
-          <p></p>
-        </div>
+<main id="main">
+<span id="top"></span>
 
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Sumary</h3>
-            <div class="resume-item pb-0">
-              <h4>Ebrahim Alesayi</h4>
-              <p>
-                Software Engineer with practical experience in web and mobile application development.
-                Specialized in Flutter for cross-platform mobile apps and modern web technologies.
-                Experienced in internship and freelance environments with strong teamwork and problem-solving skills.
-                </p>
-                
-              
-            </div>
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1 class="name display reveal" style="--d:60ms">
+        <span class="name-ghost" aria-hidden="true" data-i18n="hero_ghost">إبراهيم العيسائي</span>
+        <span class="name-solid" data-i18n="hero_name">Ebrahim Alesayi</span>
+      </h1>
 
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Dual Degree in Software Engineering</h4>
-              <h5>2024</h5>
-              <p><em>University of Central Lancashire (UCLan), United Kingdom</em></p>
-              <p>
-                Completed a dual degree program in Software Engineering in collaboration with SEGi University.
-                Gained strong foundations in software development, system analysis, and modern engineering practices.
-              </p>
-            </div>
-            
-            <div class="resume-item">
-              <h4>SEGi University &amp; Kota Damansara, Malaysia </h4>
-              <h5>2/2019 – 2/2023</h5><br />
-              <p><em>Bachelor of Information Technology (Software Engineering)</em></p>
+      <p class="role reveal" style="--d:120ms"><span id="typed"></span><span class="caret">|</span></p>
 
-              <p>11/2018 – 4/2019
-                Certificate of Participation as Participant in Web Design Workshop <br />
-                Certificate of Participation as participant in international cultural 
-                night<br />
-                Co-curriculum activity.<br />
-                Member of Segi international student society (SISS). <br />
-                11/2019 – 6/2023</p>
+      <p class="pitch reveal" style="--d:180ms" data-i18n="hero_pitch">
+        I build production mobile apps and web platforms for businesses in Saudi Arabia — Flutter on mobile, Angular and React on the web. Currently shipping client products at Jaddaf.
+      </p>
 
- 
-            </div>
-            <div class="resume-item">
-              <h4> Alayasi High School &amp; Labaoos,Yaffa,Yemen </h4>
-              <h5>1/2013 – 1/2016</h5>
-              <p><em>Scientific major in high school, Grade(A)</em></p>
-              <p></p>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Experience</h3>
-            <div class="resume-item">
-              <div class="resume-item">
-                <h4>Freelance Flutter & Web Developer</h4>
-                <h5>2024 – Present</h5>
-                <p><em>Remote / Freelance</em></p>
-                <ul>
-                  <li>Developed cross-platform mobile applications using Flutter for Android and iOS.</li>
-                  <li>Built responsive and user-friendly web applications using modern frontend technologies.</li>
-                  <li>Integrated RESTful APIs, authentication systems, and database solutions.</li>
-                  <li>Focused on performance optimization, clean UI, and maintainable code.</li>
-                </ul>
-              </div>
-              
-              <h4>Web Department </h4>
-              <h5>2022 - 2023</h5>
-              <p><em>KidoCode, Kuala Lumpur, Malaysia </em></p>
-              <ul>
-                <li>Experience provided from the Internship/Traning</li>
-                <li>All the knowledge including programming skills, communication skills, teamwork skills.
-                </li>
-                <li>All internship foundation on Cubie, Observed teaching method.</li>
-                <li>Teaching students, and contributing to all the projects given by the department.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Skills</h4>
-              <h5></h5>
-              <p><em></em></p>
-              <ul>
-
-                
-                <li>Flutter & Dart</li>
-<li>HTML, CSS, JavaScript</li>
-<li>Node.js, PHP, Python</li>
-<li>REST APIs</li>
-<li>MySQL, MongoDB, PostgreSQL</li>
- <li>Git & GitHub</li>
-
-              </ul>
-            </div>
-          </div>
-        </div>
-
+      <div class="hero-cta reveal" style="--d:240ms">
+        <a class="btn btn-primary" href="#contact">
+          <span data-i18n="cta_hire">Start a project</span>
+          <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="assets/docs/Ebrahim_Alesayi_CV.pdf" download>
+          <svg class="svg" aria-hidden="true"><use href="#i-download"/></svg>
+          <span data-i18n="cta_cv">Download CV</span>
+        </a>
       </div>
-    </section>
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
 
-        <div class="section-title">
-          <h2>Projects</h2>
-          <p></p>
+      <dl class="hero-facts reveal" style="--d:300ms">
+        <div class="fact">
+          <dt data-i18n="fact_now_l">Now</dt>
+          <dd data-i18n="fact_now_v">Software Engineer, Jaddaf</dd>
         </div>
-
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
+        <div class="fact">
+          <dt data-i18n="fact_stack_l">Core stack</dt>
+          <dd data-i18n="fact_stack_v">Flutter · Angular · React</dd>
         </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/profile-img.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/profile-img.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.JPG" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-2.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-3.JPG" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-3.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-4.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.JPG" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-5.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.JPG" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-7.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-8.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.JPG" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-9.JPG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
+        <div class="fact">
+          <dt data-i18n="fact_base_l">Based in</dt>
+          <dd data-i18n="fact_base_v">Saudi Arabia</dd>
         </div>
+      </dl>
+    </div>
 
+    <figure class="portrait reveal" style="--d:120ms">
+      <span class="portrait-frame" aria-hidden="true"></span>
+      <img src="assets/img/portrait.jpg" width="900" height="1057" alt="Ebrahim Alesayi" fetchpriority="high">
+      <figcaption class="portrait-tag mono" data-i18n="portrait_tag">Software Engineer</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ METRICS ============================ -->
+<div class="wrap">
+  <div class="metrics reveal">
+    <div class="metric"><b>9</b><span data-i18n="m_projects">Projects shipped</span></div>
+    <div class="metric"><b>6</b><span data-i18n="m_live">Live products</span></div>
+    <div class="metric"><b>3</b><span data-i18n="m_companies">Companies</span></div>
+    <div class="metric"><b>AR/EN</b><span data-i18n="m_bilingual">Bilingual builds</span></div>
+  </div>
+</div>
+
+<!-- ============================ ABOUT ============================ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow mono" data-i18n="eb_about">Profile</p>
+      <h2 class="sec-title" data-i18n="about_title">Engineer first, designer by habit.</h2>
+    </header>
+
+    <div class="about">
+      <div class="about-body reveal">
+        <p class="lead" data-i18n="about_p1">I am a software engineer with a dual BSc from the UK and Malaysia, working across the full delivery path: interface, API integration, and release. My work today sits with <b>Jaddaf</b>, where I build client web platforms and mobile apps, after three months at <b>Ashal</b> building an Arabic-first Angular system.</p>
+        <p data-i18n="about_p2">Most of what I ship serves Arabic and English audiences at once, so right-to-left layout, bilingual content, and typography that holds up in both scripts are not an afterthought — they are the starting constraint.</p>
+        <p data-i18n="about_p3">I worked as a web developer at KidoCode and delivered freelance Flutter apps and business websites for tailoring shops, pharmacies, and car-care studios. That mix taught me to scope small, ship fast, and keep the interface honest about what it can do.</p>
       </div>
-    </section>
 
-    
+      <dl class="facts card reveal" style="--d:100ms">
+        <div><dt data-i18n="f_email">Email</dt><dd>ebrahim.t.alesayi@gmail.com</dd></div>
+        <div><dt data-i18n="f_phone">Phone</dt><dd dir="ltr">+966 53 114 6176</dd></div>
+        <div><dt data-i18n="f_city">Location</dt><dd data-i18n="f_city_v">Saudi Arabia</dd></div>
+        <div><dt data-i18n="f_degree">Degree</dt><dd data-i18n="f_degree_v">BSc Software Engineering</dd></div>
+        <div><dt data-i18n="f_lang">Languages</dt><dd data-i18n="f_lang_v">Arabic (native) · English (advanced)</dd></div>
+        <div><dt data-i18n="f_avail">Availability</dt><dd data-i18n="f_avail_v">Freelance projects &amp; contract work</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
 
+<!-- ============================ EXPERIENCE ============================ -->
+<section class="sec" id="experience">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow mono" data-i18n="eb_exp">Track record</p>
+      <h2 class="sec-title" data-i18n="exp_title">Where I have been building.</h2>
+      <p class="sec-lede" data-i18n="exp_lede">Three in-house roles, alongside independent delivery — each one added a stack I now use in production.</p>
+    </header>
 
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p></p>
-        </div>
-
-        <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Jeddah</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>ebrahim.t.alesayi@gmail.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>0553658309</p>
-              </div>
-
-              <iframe src="" allowfullscreen></iframe>
-            </div>
-            
-
+    <div class="exp">
+      <ol class="rail reveal">
+        <li class="job now">
+          <p class="job-when mono">
+            <span data-i18n="job1_when">2026 — Present</span>
+            <span class="chip-now" data-i18n="chip_current">Current</span>
+          </p>
+          <h3 data-i18n="job1_role">Software Engineer</h3>
+          <p class="job-org">
+            <svg class="svg" aria-hidden="true"><use href="#i-layers"/></svg>
+            <span data-i18n="job1_org">Jaddaf</span>
+          </p>
+          <ul>
+            <li data-i18n="job1_b1">Build and ship client web platforms and mobile apps end to end, from interface to deployment.</li>
+            <li data-i18n="job1_b2">Delivered <b>libro-mea.com</b>, a bilingual storefront for smart watches and bracelets.</li>
+            <li data-i18n="job1_b3">Integrate REST APIs, payments, and dashboards, and keep every build responsive in Arabic and English.</li>
+            <li data-i18n="job1_b4">Currently building <b>CustomStudio</b>, an internal product and packaging control system, from the ground up.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag hl">Flutter</span><span class="tag hl">React</span><span class="tag">JavaScript</span><span class="tag">REST APIs</span><span class="tag">RTL / i18n</span>
           </div>
+        </li>
 
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="https://formspree.io/f/xkggkgvo?language=en" method="POST" class="php-email-form">
-
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="email">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading...</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+        <li class="job">
+          <p class="job-when mono">
+            <span data-i18n="job2_when">2026 · 3 months</span>
+          </p>
+          <h3 data-i18n="job2_role">Front-End Developer</h3>
+          <p class="job-org">
+            <svg class="svg" aria-hidden="true"><use href="#i-code"/></svg>
+            <a href="https://ashalfront.azurewebsites.net/index" target="_blank" rel="noopener"><span data-i18n="job2_org">Ashal IT Solutions</span></a>
+          </p>
+          <ul>
+            <li data-i18n="job2_b1">Helped build Ashal's integrated IT-solutions platform, contributing production pages and components.</li>
+            <li data-i18n="job2_b2">Picked up <b>Angular</b> on the job and was shipping to the live front end within the first weeks.</li>
+            <li data-i18n="job2_b3">Worked Arabic-first: full RTL layouts, Arabic typography, and a consistent component system.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag hl">Angular</span><span class="tag hl">TypeScript</span><span class="tag">Bootstrap 5</span><span class="tag">RTL</span><span class="tag">Azure</span>
           </div>
-          <script>
-            document.addEventListener("DOMContentLoaded", function () {
-              const form = document.querySelector('.php-email-form');
-          
-              form.addEventListener('submit', function (event) {
-                event.preventDefault(); // Prevent default submission
-                const formData = new FormData(form);
-          
-                fetch(form.action, {
-                  method: 'POST',
-                  body: formData,
-                  headers: { 'Accept': 'application/json' }
-                })
-                .then(response => response.json())
-                .then(data => {
-                  if (data.ok) {
-                    document.querySelector('.sent-message').style.display = 'block'; // Success message
-                    form.reset(); // Reset form
-                  }
-                })
-                .catch(() => {
-                });
-              });
-            });
-          </script>
-          
-          
-          
+        </li>
 
-          
-          
-          
+        <li class="job">
+          <p class="job-when mono"><span data-i18n="job3_when">2023 — 2026</span></p>
+          <h3 data-i18n="job3_role">Freelance Flutter &amp; Web Developer</h3>
+          <p class="job-org">
+            <svg class="svg" aria-hidden="true"><use href="#i-mobile"/></svg>
+            <span data-i18n="job3_org">Independent</span>
+          </p>
+          <ul>
+            <li data-i18n="job3_b1">Shipped cross-platform Flutter apps for tailoring shops, restaurants, and pharmacies.</li>
+            <li data-i18n="job3_b2">Built and launched business websites, including Olyx, Alkhayala, Helabi, and Johnson PPF.</li>
+            <li data-i18n="job3_b3">Handled the whole cycle: requirements, UI, API and database integration, and handover.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag hl">Flutter</span><span class="tag">Dart</span><span class="tag">Node.js</span><span class="tag">PHP</span><span class="tag">MySQL</span>
+          </div>
+        </li>
+
+        <li class="job">
+          <p class="job-when mono"><span data-i18n="job4_when">2022 — 2023 · 1 year</span></p>
+          <h3 data-i18n="job4_role">Web Developer</h3>
+          <p class="job-org">
+            <svg class="svg" aria-hidden="true"><use href="#i-globe"/></svg>
+            <span data-i18n="job4_org">KidoCode · Kuala Lumpur, Malaysia</span>
+          </p>
+          <ul>
+            <li data-i18n="job4_b1">Spent a year building and maintaining the company's web pages and internal tools.</li>
+            <li data-i18n="job4_b2">Turned designs into responsive interfaces that held up across browsers and screen sizes.</li>
+            <li data-i18n="job4_b3">My first role inside a professional team, working in English in Kuala Lumpur.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag hl">JavaScript</span><span class="tag">HTML / CSS</span><span class="tag">Responsive</span><span class="tag">Teamwork</span>
+          </div>
+        </li>
+      </ol>
+
+      <div class="aside-stack">
+        <div class="card reveal" style="--d:80ms">
+          <p class="eyebrow mono" data-i18n="eb_edu">Education</p>
+          <div class="edu-item">
+            <h4 data-i18n="edu1_t">BSc (Hons) Software Engineering — Dual Degree</h4>
+            <p data-i18n="edu1_p">University of Central Lancashire (UK) &amp; SEGi University (Malaysia) · 2024</p>
+          </div>
+          <div class="edu-item">
+            <h4 data-i18n="edu2_t">Continuous learning</h4>
+            <p data-i18n="edu2_p">Angular picked up on the job at Ashal; currently deepening TypeScript architecture and Flutter state management.</p>
+          </div>
+          <div class="cv-row">
+            <a class="btn btn-primary" href="assets/docs/Ebrahim_Alesayi_CV.pdf" download>
+              <svg class="svg" aria-hidden="true"><use href="#i-download"/></svg>
+              <span data-i18n="cta_cv">Download CV</span>
+            </a>
+            <a class="btn btn-ghost" href="assets/docs/Ebrahim_Alesayi_CV.pdf" target="_blank" rel="noopener">
+              <svg class="svg" aria-hidden="true"><use href="#i-eye"/></svg>
+              <span data-i18n="cta_preview">Preview</span>
+            </a>
+          </div>
         </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Ebrahim Alesayi</span></strong>
-      </div>
-      <div class="credits">
-      
-        Designed by <a href="">Ebrahim Alesayi</a>
       </div>
     </div>
-  </footer><!-- End  Footer -->
+  </div>
+</section>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- ============================ SKILLS ============================ -->
+<section class="sec" id="skills">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow mono" data-i18n="eb_skills">Toolkit</p>
+      <h2 class="sec-title" data-i18n="skills_title">What I reach for.</h2>
+      <p class="sec-lede" data-i18n="skills_lede">Grouped by the job it does, not by a percentage bar. Highlighted items are what I use most weeks.</p>
+    </header>
 
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+    <div class="skills">
+      <div class="card skill-group reveal">
+        <h3><svg class="svg" aria-hidden="true"><use href="#i-mobile"/></svg><span data-i18n="sk1_t">Mobile</span></h3>
+        <div class="tags">
+          <span class="tag hl">Flutter</span><span class="tag hl">Dart</span><span class="tag">Firebase</span><span class="tag">Android</span><span class="tag">iOS</span><span class="tag">Push &amp; WhatsApp API</span>
+        </div>
+      </div>
+      <div class="card skill-group reveal" style="--d:80ms">
+        <h3><svg class="svg" aria-hidden="true"><use href="#i-code"/></svg><span data-i18n="sk2_t">Web</span></h3>
+        <div class="tags">
+          <span class="tag hl">Angular</span><span class="tag hl">React</span><span class="tag hl">TypeScript</span><span class="tag">JavaScript</span><span class="tag">HTML5</span><span class="tag">CSS / Sass</span><span class="tag">Bootstrap</span>
+        </div>
+      </div>
+      <div class="card skill-group reveal" style="--d:160ms">
+        <h3><svg class="svg" aria-hidden="true"><use href="#i-server"/></svg><span data-i18n="sk3_t">Backend &amp; data</span></h3>
+        <div class="tags">
+          <span class="tag hl">REST APIs</span><span class="tag">Node.js</span><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">SQL Server</span><span class="tag">C#</span><span class="tag">Auth</span>
+        </div>
+      </div>
+      <div class="card skill-group reveal" style="--d:240ms">
+        <h3><svg class="svg" aria-hidden="true"><use href="#i-gauge"/></svg><span data-i18n="sk4_t">Craft</span></h3>
+        <div class="tags">
+          <span class="tag hl">UI / UX</span><span class="tag hl">RTL &amp; bilingual</span><span class="tag">Responsive design</span><span class="tag">Accessibility</span><span class="tag">Performance</span><span class="tag">Git</span><span class="tag">Azure deploy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script src="assets/js/main.js"></script>
+<!-- ============================ WORK ============================ -->
+<section class="sec" id="work">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow mono" data-i18n="eb_work">Selected work</p>
+      <h2 class="sec-title" data-i18n="work_title">Selected products and projects.</h2>
+      <p class="sec-lede" data-i18n="work_lede">Client platforms built with a team, and apps I delivered on my own. Every entry links to the running product or a walkthrough.</p>
+    </header>
 
-  
+    <div class="filters reveal" role="group" aria-label="Filter projects">
+      <button type="button" class="filter" data-filter="all" aria-pressed="true" data-i18n="fl_all">All</button>
+      <button type="button" class="filter" data-filter="web" aria-pressed="false" data-i18n="fl_web">Web</button>
+      <button type="button" class="filter" data-filter="mobile" aria-pressed="false" data-i18n="fl_mobile">Mobile</button>
+      <button type="button" class="filter" data-filter="systems" aria-pressed="false" data-i18n="fl_systems">Systems</button>
+    </div>
 
+    <div class="work" id="workGrid">
+
+      <!-- CustomStudio -->
+      <article class="proj reveal" data-cat="web systems" style="--hue:var(--saffron)">
+        <div class="cover">
+          <span class="cover-initial" aria-hidden="true">C</span>
+          <span class="cover-kind" aria-hidden="true"><svg class="svg"><use href="#i-box"/></svg></span>
+          <span class="cover-domain">custmiz.netlify.app</span>
+        </div>
+        <div class="proj-body">
+          <p class="proj-org"><span data-i18n="p0_org">At Jaddaf</span> <span class="chip-now" data-i18n="chip_progress">In progress</span></p>
+          <h3 data-i18n="p0_t">CustomStudio — Packaging Control System</h3>
+          <p data-i18n="p0_d">An internal system for running product and packaging operations end to end. Arabic-first throughout, with an account per role created by an administrator.</p>
+          <div class="tags"><span class="tag hl">Web app</span><span class="tag">Role-based access</span><span class="tag">Arabic UI</span></div>
+          <a class="proj-link" href="https://custmiz.netlify.app/#/" target="_blank" rel="noopener">
+            <span data-i18n="visit">Visit the site</span>
+            <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Libro -->
+      <article class="proj reveal" data-cat="web" style="--hue:var(--sea)">
+        <div class="cover">
+          <img class="cover-photo" src="assets/img/projects/libro.jpg" alt="" loading="lazy" width="960" height="600">
+          <span class="cover-kind" aria-hidden="true"><svg class="svg"><use href="#i-cart"/></svg></span>
+          <span class="cover-domain">libro-mea.com</span>
+        </div>
+        <div class="proj-body">
+          <p class="proj-org" data-i18n="p1_org">At Jaddaf · 2026</p>
+          <h3 data-i18n="p1_t">Libro — Smart Watches Storefront</h3>
+          <p data-i18n="p1_d">A bilingual e-commerce storefront for smart watches and bracelets: product catalogue, cart and checkout, and an Arabic/English interface that mirrors cleanly in both directions.</p>
+          <div class="tags"><span class="tag hl">React</span><span class="tag">E-commerce</span><span class="tag">AR / EN</span></div>
+          <a class="proj-link" href="https://libro-mea.com/" target="_blank" rel="noopener">
+            <span data-i18n="visit">Visit the site</span>
+            <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Olyx -->
+      <article class="proj reveal" data-cat="web" style="--hue:var(--coral);--d:60ms">
+        <div class="cover">
+          <img class="cover-photo" src="assets/img/projects/olyx.jpg" alt="" loading="lazy" width="960" height="600">
+          <span class="cover-kind" aria-hidden="true"><svg class="svg"><use href="#i-globe"/></svg></span>
+          <span class="cover-domain">olyxsa.com</span>
+        </div>
+        <div class="proj-body">
+          <p class="proj-org" data-i18n="p2_org">Independent · 2025</p>
+          <h3 data-i18n="p2_t">Olyx — Digital Agency Platform</h3>
+          <p data-i18n="p2_d">A Saudi agency site and website platform: clients get a bilingual site on their own domain with an Arabic admin panel they can run themselves, alongside branding and content services.</p>
+          <div class="tags"><span class="tag hl">Web platform</span><span class="tag">Arabic CMS</span><span class="tag">SEO</span></div>
+          <a class="proj-link" href="https://olyxsa.com/" target="_blank" rel="noopener">
+            <span data-i18n="visit">Visit the site</span>
+            <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Ashal -->
+      <article class="proj reveal" data-cat="web systems" style="--hue:var(--saffron);--d:120ms">
+        <div class="cover">
+          <img class="cover-photo" src="assets/img/projects/ashal.jpg" alt="" loading="lazy" width="960" height="600">
+          <span class="cover-kind" aria-hidden="true"><svg class="svg"><use href="#i-server"/></svg></span>
+          <span class="cover-domain">ashalfront.azurewebsites.net</span>
+        </div>
+        <div class="proj-body">
+          <p class="proj-org" data-i18n="p3_org">At Ashal · 2026</p>
+          <h3 data-i18n="p3_t">Ashal — IT Solutions System</h3>
+          <p data-i18n="p3_d">Front end for an integrated IT-solutions company, built in Angular. I contributed pages and components to the live system and learned the framework on the job while shipping.</p>
+          <div class="tags"><span class="tag hl">Angular</span><span class="tag">TypeScript</span><span class="tag">RTL</span></div>
+          <a class="proj-link" href="https://ashalfront.azurewebsites.net/index" target="_blank" rel="noopener">
+            <span data-i18n="visit">Visit the site</span>
+            <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Taqaseem -->
+      <article class="proj reveal" data-cat="mobile" style="--hue:var(--sea)">
+        <div class="cover">
+          <img class="cover-photo" src="assets/img/taqaseem/q1.jpeg" alt="" loading="lazy" width="499" height="1080">
+          <span class="cover-kind" aria-hidden="true"><svg class="svg"><use href="#i-scissors"/></svg></span>
+          <span class="cover-domain" data-i18n="tag_app">Flutter app</span>
+        </div>
+        <div class="proj-body">
+          <p class="proj-org" data-i18n="p4_org">Independent · 2025</p>
+          <h3 data-i18n="p4_t">Taqaseem — Tailoring Management</h3>
+          <p data-i18n="p4_d">An operations app for tailoring workshops: customer measurements, fabric inventory, order stages, and automatic WhatsApp updates when a garment is ready.</p>
+          <div class="tags"><span class="tag hl">Flutter</span><span class="tag">Firebase</span><span class="tag">WhatsApp API</span></div>
+          <a class="proj-link" href="projects/taqaseem.html">
+            <span data-i18n="walkthrough">See the walkthrough</span>
+            <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Restaurant -->
+      <article class="proj reveal" data-cat="mobile" style="--hue:var(--coral);--d:60ms">
+        <div class="cover">
+          <span class="cover-initial" aria-hidden="true">R</span>
+          <span class="cover-kind" aria-hidden="true"><svg class="svg"><use href="#i-mobile"/></svg></span>
+          <span class="cover-domain" data-i18n="tag_app">Flutter app</span>
+        </div>
+        <div class="proj-body">
+          <p class="proj-org" data-i18n="p5_org">Independent · 2025</p>
+          <h3 data-i18n="p5_t">Restaurant Ordering App</h3>
+          <p data-i18n="p5_d">A customer-facing food ordering app with menu browsing, live order tracking, and multiple payment options — built to stay usable on a slow connection.</p>
+          <div class="tags"><span class="tag hl">Flutter</span><span class="tag">REST APIs</span><span class="tag">Payments</span></div>
+          <a class="proj-link" href="projects/restaurant.html">
+            <span data-i18n="walkthrough">See the walkthrough</span>
+            <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Pharmacy -->
+      <article class="proj reveal" data-cat="systems" style="--hue:var(--saffron);--d:120ms">
+        <div class="cover">
+          <span class="cover-initial" aria-hidden="true">P</span>
+          <span class="cover-kind" aria-hidden="true"><svg class="svg"><use href="#i-pill"/></svg></span>
+          <span class="cover-domain" data-i18n="tag_desktop">Desktop system</span>
+        </div>
+        <div class="proj-body">
+          <p class="proj-org" data-i18n="p6_org">Independent · 2024</p>
+          <h3 data-i18n="p6_t">Pharmacy Management System</h3>
+          <p data-i18n="p6_d">Stock and prescription tracking for a pharmacy: batch and expiry control, dispensing records, and reporting, backed by a relational database.</p>
+          <div class="tags"><span class="tag hl">C#</span><span class="tag">MySQL</span><span class="tag">Reporting</span></div>
+          <a class="proj-link" href="projects/pharmacy.html">
+            <span data-i18n="walkthrough">See the walkthrough</span>
+            <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Johnson PPF -->
+      <article class="proj reveal" data-cat="web" style="--hue:var(--sea)">
+        <div class="cover">
+          <img class="cover-photo" src="assets/img/projects/johnson.jpg" alt="" loading="lazy" width="960" height="600">
+          <span class="cover-kind" aria-hidden="true"><svg class="svg"><use href="#i-car"/></svg></span>
+          <span class="cover-domain">johnson-ppf.com</span>
+        </div>
+        <div class="proj-body">
+          <p class="proj-org" data-i18n="p7_org">Independent · 2025</p>
+          <h3 data-i18n="p7_t">Johnson PPF — Car Protection</h3>
+          <p data-i18n="p7_d">A service site for a Saudi car-care studio covering paint protection film, heat insulation, and ceramic coating, with booking enquiries routed straight to WhatsApp.</p>
+          <div class="tags"><span class="tag hl">Web</span><span class="tag">Local SEO</span><span class="tag">Lead capture</span></div>
+          <a class="proj-link" href="https://johnson-ppf.com/" target="_blank" rel="noopener">
+            <span data-i18n="visit">Visit the site</span>
+            <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Alkhayala -->
+      <article class="proj reveal" data-cat="web" style="--hue:var(--coral);--d:60ms">
+        <div class="cover">
+          <img class="cover-photo" src="assets/img/projects/alkhayala.jpg" alt="" loading="lazy" width="960" height="600">
+          <span class="cover-kind" aria-hidden="true"><svg class="svg"><use href="#i-scissors"/></svg></span>
+          <span class="cover-domain">alkhayala.netlify.app</span>
+        </div>
+        <div class="proj-body">
+          <p class="proj-org" data-i18n="p8_org">Independent · 2025</p>
+          <h3 data-i18n="p8_t">Alkhayala — Tailoring House</h3>
+          <p data-i18n="p8_d">A storefront for a traditional thoub tailor: fabric ranges, the measurement process explained step by step, and a direct line to book a fitting.</p>
+          <div class="tags"><span class="tag hl">Web</span><span class="tag">Arabic-first</span><span class="tag">Responsive</span></div>
+          <a class="proj-link" href="https://alkhayala.netlify.app/" target="_blank" rel="noopener">
+            <span data-i18n="visit">Visit the site</span>
+            <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Helabi -->
+      <article class="proj reveal" data-cat="web" style="--hue:var(--saffron);--d:120ms">
+        <div class="cover">
+          <img class="cover-photo" src="assets/img/projects/helabi.jpg" alt="" loading="lazy" width="960" height="600">
+          <span class="cover-kind" aria-hidden="true"><svg class="svg"><use href="#i-pin"/></svg></span>
+          <span class="cover-domain">helabi.netlify.app</span>
+        </div>
+        <div class="proj-body">
+          <p class="proj-org" data-i18n="p9_org">Independent · 2025</p>
+          <h3 data-i18n="p9_t">Helabi — Tailoring at Your Door</h3>
+          <p data-i18n="p9_d">A booking site for a tailor who takes measurements at the customer's home and delivers the finished thoub — the whole flow built around one request form.</p>
+          <div class="tags"><span class="tag hl">Web</span><span class="tag">Booking flow</span><span class="tag">Mobile-first</span></div>
+          <a class="proj-link" href="https://helabi.netlify.app/" target="_blank" rel="noopener">
+            <span data-i18n="visit">Visit the site</span>
+            <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SERVICES ============================ -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow mono" data-i18n="eb_services">How I can help</p>
+      <h2 class="sec-title" data-i18n="services_title">Four things I do well.</h2>
+    </header>
+
+    <div class="services">
+      <div class="card service reveal">
+        <svg class="svg" aria-hidden="true"><use href="#i-mobile"/></svg>
+        <h3 data-i18n="s1_t">Mobile apps</h3>
+        <p data-i18n="s1_d">One Flutter codebase for Android and iOS, from the first screen to the store listing.</p>
+      </div>
+      <div class="card service reveal" style="--d:80ms">
+        <svg class="svg" aria-hidden="true"><use href="#i-code"/></svg>
+        <h3 data-i18n="s2_t">Web platforms</h3>
+        <p data-i18n="s2_d">Angular and React front ends, admin dashboards, and marketing sites that work in Arabic and English.</p>
+      </div>
+      <div class="card service reveal" style="--d:160ms">
+        <svg class="svg" aria-hidden="true"><use href="#i-server"/></svg>
+        <h3 data-i18n="s3_t">APIs &amp; integration</h3>
+        <p data-i18n="s3_d">REST endpoints, authentication, payments, and database work that connects the interface to real data.</p>
+      </div>
+      <div class="card service reveal" style="--d:240ms">
+        <svg class="svg" aria-hidden="true"><use href="#i-gauge"/></svg>
+        <h3 data-i18n="s4_t">Speed &amp; SEO</h3>
+        <p data-i18n="s4_d">Auditing an existing site, cutting load time, and fixing the markup search engines read.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="eyebrow mono" data-i18n="eb_contact">Get in touch</p>
+      <h2 class="sec-title" data-i18n="contact_title">Tell me what you want to build.</h2>
+      <p class="sec-lede" data-i18n="contact_lede">Send a short brief — what the product does, who it is for, and when you need it. I reply within a day.</p>
+    </header>
+
+    <div class="contact">
+      <div class="card reveal">
+        <div class="reach">
+          <a href="mailto:ebrahim.t.alesayi@gmail.com">
+            <svg class="svg" aria-hidden="true"><use href="#i-mail"/></svg>
+            <span><b data-i18n="f_email">Email</b>ebrahim.t.alesayi@gmail.com</span>
+          </a>
+          <a href="https://wa.me/966531146176" target="_blank" rel="noopener">
+            <svg class="svg" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+            <span><b data-i18n="f_whatsapp">WhatsApp</b><span dir="ltr">+966 53 114 6176</span></span>
+          </a>
+          <div>
+            <svg class="svg" aria-hidden="true"><use href="#i-pin"/></svg>
+            <span><b data-i18n="f_city">Location</b><span data-i18n="f_city_v">Saudi Arabia</span></span>
+          </div>
+        </div>
+        <div class="socials">
+          <a href="https://github.com/ealesayi" target="_blank" rel="noopener" aria-label="GitHub"><svg class="svg"><use href="#i-github"/></svg></a>
+          <a href="https://sa.linkedin.com/in/ebrahimmatalesayi" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="svg"><use href="#i-linkedin"/></svg></a>
+          <a href="https://wa.me/966531146176" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="svg"><use href="#i-whatsapp"/></svg></a>
+          <a href="https://www.instagram.com/e_alesayi/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="svg"><use href="#i-instagram"/></svg></a>
+          <a href="https://www.youtube.com/channel/UCSou77la5_4vdW49zFJyF6g" target="_blank" rel="noopener" aria-label="YouTube"><svg class="svg"><use href="#i-youtube"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card reveal" style="--d:80ms">
+        <form id="waForm">
+          <div class="field">
+            <label for="cf-name" data-i18n="form_name">Your name</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="cf-service" data-i18n="form_service">What do you need?</label>
+            <select id="cf-service" name="service">
+              <option data-i18n="opt_web">Website</option>
+              <option data-i18n="opt_store">Online store</option>
+              <option data-i18n="opt_mobile">Mobile app</option>
+              <option data-i18n="opt_system">Management system</option>
+              <option data-i18n="opt_improve">Improve an existing site</option>
+              <option data-i18n="opt_other">Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cf-msg" data-i18n="form_message">Your message</label>
+            <textarea id="cf-msg" name="message" rows="5" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">
+            <svg class="svg" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+            <span data-i18n="form_send">Send on WhatsApp</span>
+          </button>
+          <p class="form-note" data-i18n="form_note">This opens WhatsApp with your message already written.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p data-i18n="footer_left">© 2026 Ebrahim Alesayi</p>
+    <p><a href="mailto:ebrahim.t.alesayi@gmail.com">ebrahim.t.alesayi@gmail.com</a></p>
+  </div>
+</footer>
+
+<button type="button" id="toTop" aria-label="Back to top">
+  <svg class="svg" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+</button>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------------------------------------------------------
+     Theme — dark by default, honours the OS on a first visit
+     --------------------------------------------------------- */
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('themeBtn');
+  var themeIcon = themeBtn.querySelector('use');
+
+  function applyTheme(mode) {
+    root.setAttribute('data-theme', mode);
+    themeIcon.setAttribute('href', mode === 'light' ? '#i-moon' : '#i-sun');
+    document.querySelector('meta[name="theme-color"]')
+      .setAttribute('content', mode === 'light' ? '#E9EFED' : '#08191F');
+    try { localStorage.setItem('theme', mode); } catch (e) {}
+  }
+  var savedTheme = null;
+  try { savedTheme = localStorage.getItem('theme'); } catch (e) {}
+  applyTheme(savedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
+  themeBtn.addEventListener('click', function () {
+    applyTheme(root.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+  });
+
+  /* ---------------------------------------------------------
+     Mobile navigation
+     --------------------------------------------------------- */
+  var burger = document.getElementById('burger');
+  var navLinks = document.getElementById('navLinks');
+  var burgerIcon = burger.querySelector('use');
+
+  var scrim = document.getElementById('navScrim');
+
+  function setMenu(open, returnFocus) {
+    navLinks.classList.toggle('open', open);
+    scrim.classList.toggle('show', open);
+    nav.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burgerIcon.setAttribute('href', open ? '#i-close' : '#i-menu');
+    // hold the page still while the drawer is over it
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) {
+      var first = navLinks.querySelector('a');
+      if (first) first.focus();
+    } else if (returnFocus) {
+      burger.focus();
+    }
+  }
+  function closeMenu(returnFocus) { setMenu(false, returnFocus); }
+
+  burger.addEventListener('click', function () {
+    setMenu(!navLinks.classList.contains('open'), true);
+  });
+  scrim.addEventListener('click', function () { closeMenu(true); });
+  navLinks.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { closeMenu(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) closeMenu(true);
+  });
+  // keep Tab inside the drawer while it is open
+  navLinks.addEventListener('keydown', function (e) {
+    if (e.key !== 'Tab' || !navLinks.classList.contains('open')) return;
+    var f = navLinks.querySelectorAll('a,button');
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+  // a drawer left open must not linger when the layout goes wide
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 900 && navLinks.classList.contains('open')) closeMenu(false);
+  });
+
+  /* ---------------------------------------------------------
+     Scroll: progress bar, sticky border, back-to-top
+     --------------------------------------------------------- */
+  var progress = document.getElementById('progress');
+  var nav = document.getElementById('nav');
+  var toTop = document.getElementById('toTop');
+  var ticking = false;
+
+  function onScroll() {
+    var y = window.scrollY;
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+    nav.classList.toggle('stuck', y > 8);
+    toTop.classList.toggle('show', y > 500);
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  onScroll();
+  toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  /* ---------------------------------------------------------
+     Reveal on scroll
+     --------------------------------------------------------- */
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------------------------------------------------------
+     Scroll spy
+     --------------------------------------------------------- */
+  var sections = ['about', 'experience', 'work', 'services', 'contact'];
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        navLinks.querySelectorAll('a').forEach(function (a) {
+          a.classList.toggle('current', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) spy.observe(el);
+    });
+  }
+
+  /* ---------------------------------------------------------
+     Project filter
+     --------------------------------------------------------- */
+  var filters = document.querySelectorAll('.filter');
+  var cards = document.querySelectorAll('#workGrid .proj');
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var want = btn.dataset.filter;
+      filters.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+      cards.forEach(function (card) {
+        var cats = (card.dataset.cat || '').split(/\s+/);
+        card.classList.toggle('hide', want !== 'all' && cats.indexOf(want) === -1);
+      });
+    });
+  });
+
+  /* ---------------------------------------------------------
+     Rotating role — typewriter
+     --------------------------------------------------------- */
+  var typed = document.getElementById('typed');
+  var roles = {
+    en: ['Software Engineer', 'Flutter Developer', 'Angular Developer', 'Full-Stack Web Developer'],
+    ar: ['مهندس برمجيات', 'مطور Flutter', 'مطور Angular', 'مطور ويب متكامل']
+  };
+  var list = roles.en, ri = 0, ci = 0, deleting = false, timer = null;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function tick() {
+    var word = list[ri];
+    ci += deleting ? -1 : 1;
+    typed.textContent = word.slice(0, ci);
+    var wait = deleting ? 45 : 95;
+    if (!deleting && ci === word.length) { deleting = true; wait = 1900; }
+    else if (deleting && ci === 0) { deleting = false; ri = (ri + 1) % list.length; wait = 400; }
+    timer = setTimeout(tick, wait);
+  }
+  function startTyping(lang) {
+    clearTimeout(timer);
+    list = roles[lang] || roles.en;
+    ri = 0; ci = 0; deleting = false;
+    if (reduced) { typed.textContent = list[0]; return; }
+    tick();
+  }
+
+  /* ---------------------------------------------------------
+     Astronaut: how far it walks depends on how wide the name is
+     --------------------------------------------------------- */
+  var astro = document.querySelector('.brand-mark');
+  var brandName = document.querySelector('.brand-name');
+  function measureClimb() {
+    if (!astro || !brandName) return;
+    if (getComputedStyle(brandName).display === 'none') return;   // phones hide the name
+    // safe to read: the animation holds translate(0,0) during its delay and after it ends
+    var a = astro.getBoundingClientRect(), t = brandName.getBoundingClientRect();
+    // 4px shy of the cap keeps the helmet off the very top edge of the bar
+    astro.style.setProperty('--climb', Math.max(0, Math.round(a.bottom - t.top) - 4) + 'px');
+    astro.style.setProperty('--shift', Math.round(Math.min(t.width * 0.5, 46)) + 'px');
+  }
+  measureClimb();
+  window.addEventListener('resize', measureClimb);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measureClimb);
+  if (astro) {
+    astro.style.cursor = 'pointer';
+    astro.addEventListener('click', function (e) {
+      e.preventDefault();
+      astro.style.animation = 'none';
+      void astro.offsetWidth;          // force a reflow so the animation restarts
+      astro.style.animation = '';
+    });
+  }
+
+  /* ---------------------------------------------------------
+     Contact form — hands the message to WhatsApp instead of email
+     --------------------------------------------------------- */
+  var waForm = document.getElementById('waForm');
+  var WA_NUMBER = '966531146176';
+  waForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var ar = document.documentElement.lang === 'ar';
+    var sel = waForm.elements.namedItem('service');
+    var lines = [
+      (ar ? 'الاسم: ' : 'Name: ') + waForm.elements.namedItem('name').value.trim(),
+      (ar ? 'الخدمة: ' : 'Service: ') + sel.options[sel.selectedIndex].text,
+      '',
+      waForm.elements.namedItem('message').value.trim()
+    ];
+    window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n')),
+                '_blank', 'noopener');
+  });
+
+  /* ---------------------------------------------------------
+     Bilingual copy (EN / AR)
+     --------------------------------------------------------- */
+  var i18n = {
+    skip:          { en: "Skip to content", ar: "تخطَّ إلى المحتوى" },
+    brand_name:    { en: "Ebrahim Alesayi", ar: "إبراهيم العيسائي" },
+    brand_role:    { en: "Software Engineer", ar: "مهندس برمجيات" },
+
+    nav_about:      { en: "About", ar: "نبذة" },
+    nav_experience: { en: "Experience", ar: "الخبرة" },
+    nav_work:       { en: "Work", ar: "الأعمال" },
+    nav_services:   { en: "Services", ar: "الخدمات" },
+    nav_contact:    { en: "Contact", ar: "تواصل" },
+    hero_ghost:  { en: "إبراهيم العيسائي", ar: "Ebrahim Alesayi" },
+    hero_name:   { en: "Ebrahim Alesayi", ar: "إبراهيم العيسائي" },
+    hero_pitch:  {
+      en: "I build production mobile apps and web platforms for businesses in Saudi Arabia — Flutter on mobile, Angular and React on the web. Currently shipping client products at Jaddaf.",
+      ar: "أبني تطبيقات جوال ومنصات ويب تعمل فعلياً لدى شركات في السعودية — Flutter للجوال، وAngular وReact للويب. حالياً أطوّر منتجات العملاء في شركة جداف."
+    },
+    cta_hire:    { en: "Start a project", ar: "ابدأ مشروعاً" },
+    cta_cv:      { en: "Download CV", ar: "تحميل السيرة الذاتية" },
+    cta_preview: { en: "Preview", ar: "معاينة" },
+
+    fact_now_l:   { en: "Now", ar: "حالياً" },
+    fact_now_v:   { en: "Software Engineer, Jaddaf", ar: "مهندس برمجيات في جداف" },
+    fact_stack_l: { en: "Core stack", ar: "أدواتي الأساسية" },
+    fact_stack_v: { en: "Flutter · Angular · React", ar: "Flutter · Angular · React" },
+    fact_base_l:  { en: "Based in", ar: "المقر" },
+    fact_base_v:  { en: "Saudi Arabia", ar: "المملكة العربية السعودية" },
+    portrait_tag: { en: "Software Engineer", ar: "مهندس برمجيات" },
+
+    m_projects:  { en: "Projects shipped", ar: "مشروعاً منجزاً" },
+    m_live:      { en: "Live products", ar: "منتجاً يعمل الآن" },
+    m_companies: { en: "Companies", ar: "شركات" },
+    m_bilingual: { en: "Bilingual builds", ar: "بناء ثنائي اللغة" },
+
+    eb_about:    { en: "Profile", ar: "نبذة" },
+    about_title: { en: "Engineer first, designer by habit.", ar: "مهندس أولاً، ومصمم بالعادة." },
+    about_p1: {
+      en: "I am a software engineer with a dual BSc from the UK and Malaysia, working across the full delivery path: interface, API integration, and release. My work today sits with <b>Jaddaf</b>, where I build client web platforms and mobile apps, after three months at <b>Ashal</b> building an Arabic-first Angular system.",
+      ar: "مهندس برمجيات حاصل على بكالوريوس مزدوج من بريطانيا وماليزيا، وأعمل على مسار التسليم كاملاً: الواجهة، وربط الـAPI، والنشر. عملي اليوم مع <b>شركة جداف</b> حيث أبني منصات ويب وتطبيقات جوال للعملاء، بعد ثلاثة أشهر في <b>شركة أسهل</b> ساهمت فيها ببناء نظام Angular عربي بالكامل."
+    },
+    about_p2: {
+      en: "Most of what I ship serves Arabic and English audiences at once, so right-to-left layout, bilingual content, and typography that holds up in both scripts are not an afterthought — they are the starting constraint.",
+      ar: "معظم ما أطلقه يخدم جمهوراً عربياً وإنجليزياً في آن واحد، لذلك فإن اتجاه الواجهة من اليمين لليسار والمحتوى ثنائي اللغة وخطوطاً تصمد في اللغتين ليست إضافة لاحقة، بل نقطة البداية."
+    },
+    about_p3: {
+      en: "I worked as a web developer at KidoCode and delivered freelance Flutter apps and business websites for tailoring shops, pharmacies, and car-care studios. That mix taught me to scope small, ship fast, and keep the interface honest about what it can do.",
+      ar: "عملت كمطور ويب في KidoCode، وسلّمت كمستقل تطبيقات Flutter ومواقع أعمال لمشاغل خياطة وصيدليات ومراكز عناية بالسيارات. علّمني هذا المزيج أن أحدّد النطاق بدقة، وأسلّم بسرعة، وأبقي الواجهة صادقة فيما تستطيع فعله."
+    },
+
+    f_email:    { en: "Email", ar: "البريد" },
+    f_phone:    { en: "Phone", ar: "الجوال" },
+    f_whatsapp: { en: "WhatsApp", ar: "واتساب" },
+    f_city:     { en: "Location", ar: "الموقع" },
+    f_city_v:   { en: "Saudi Arabia", ar: "المملكة العربية السعودية" },
+    f_degree:   { en: "Degree", ar: "الشهادة" },
+    f_degree_v: { en: "BSc Software Engineering", ar: "بكالوريوس هندسة برمجيات" },
+    f_lang:     { en: "Languages", ar: "اللغات" },
+    f_lang_v:   { en: "Arabic (native) · English (advanced)", ar: "العربية (اللغة الأم) · الإنجليزية (متقدم)" },
+    f_avail:    { en: "Availability", ar: "الإتاحة" },
+    f_avail_v:  { en: "Freelance projects & contract work", ar: "مشاريع حرة وأعمال تعاقدية" },
+
+    eb_exp:    { en: "Track record", ar: "المسار المهني" },
+    exp_title: { en: "Where I have been building.", ar: "أين كنت أبني." },
+    exp_lede:  {
+      en: "Three in-house roles, alongside independent delivery — each one added a stack I now use in production.",
+      ar: "ثلاث وظائف داخل شركات، إلى جانب العمل المستقل — كل مرحلة أضافت تقنية أستخدمها اليوم في الإنتاج."
+    },
+    chip_current: { en: "Current", ar: "حالياً" },
+
+    job1_when: { en: "2026 — Present", ar: "2026 — الآن" },
+    job1_role: { en: "Software Engineer", ar: "مهندس برمجيات" },
+    job1_org:  { en: "Jaddaf", ar: "شركة جداف" },
+    job1_b1:   { en: "Build and ship client web platforms and mobile apps end to end, from interface to deployment.", ar: "بناء وتسليم منصات ويب وتطبيقات جوال للعملاء من الواجهة حتى النشر." },
+    job1_b2:   { en: "Delivered <b>libro-mea.com</b>, a bilingual storefront for smart watches and bracelets.", ar: "سلّمت <b>libro-mea.com</b>، متجراً ثنائي اللغة للساعات والأساور الذكية." },
+    job1_b3:   { en: "Integrate REST APIs, payments, and dashboards, and keep every build responsive in Arabic and English.", ar: "ربط واجهات REST والمدفوعات ولوحات التحكم، مع إبقاء كل بناء متجاوباً بالعربية والإنجليزية." },
+
+    job1_b4:   { en: "Currently building <b>CustomStudio</b>, an internal product and packaging control system, from the ground up.", ar: "أطوّر حالياً <b>CustomStudio</b>، نظام تحكّم داخلي للمنتجات والتغليف، من الصفر." },
+
+    job2_when: { en: "2026 · 3 months", ar: "2026 · 3 أشهر" },
+    job2_role: { en: "Front-End Developer", ar: "مطور واجهات أمامية" },
+    job2_org:  { en: "Ashal IT Solutions", ar: "شركة أسهل لحلول الحاسب الآلي" },
+    job2_b1:   { en: "Helped build Ashal's integrated IT-solutions platform, contributing production pages and components.", ar: "ساعدت في بناء منصة أسهل لحلول تقنية المعلومات المتكاملة، وساهمت بصفحات ومكوّنات في النظام الفعلي." },
+    job2_b2:   { en: "Picked up <b>Angular</b> on the job and was shipping to the live front end within the first weeks.", ar: "اكتسبت مهارة <b>Angular</b> أثناء العمل، وبدأت النشر على الواجهة الحية خلال الأسابيع الأولى." },
+    job2_b3:   { en: "Worked Arabic-first: full RTL layouts, Arabic typography, and a consistent component system.", ar: "عملت بمنهج «العربية أولاً»: تخطيط كامل من اليمين لليسار، وخطوط عربية، ونظام مكوّنات متناسق." },
+
+    job3_when: { en: "2023 — 2026", ar: "2023 — 2026" },
+    job3_role: { en: "Freelance Flutter & Web Developer", ar: "مطور Flutter وويب مستقل" },
+    job3_org:  { en: "Independent", ar: "عمل مستقل" },
+    job3_b1:   { en: "Shipped cross-platform Flutter apps for tailoring shops, restaurants, and pharmacies.", ar: "أطلقت تطبيقات Flutter متعددة المنصات لمشاغل خياطة ومطاعم وصيدليات." },
+    job3_b2:   { en: "Built and launched business websites, including Olyx, Alkhayala, Helabi, and Johnson PPF.", ar: "بنيت وأطلقت مواقع أعمال، منها اوليكس والخيالة وهلابي وجونسون PPF." },
+    job3_b3:   { en: "Handled the whole cycle: requirements, UI, API and database integration, and handover.", ar: "أدرت الدورة كاملة: المتطلبات، والواجهة، وربط الـAPI وقواعد البيانات، والتسليم." },
+
+    job4_when: { en: "2022 — 2023 · 1 year", ar: "2022 — 2023 · سنة واحدة" },
+    job4_role: { en: "Web Developer", ar: "مطور ويب" },
+    job4_org:  { en: "KidoCode · Kuala Lumpur, Malaysia", ar: "KidoCode · كوالالمبور، ماليزيا" },
+    job4_b1:   { en: "Spent a year building and maintaining the company's web pages and internal tools.", ar: "قضيت سنة في بناء وصيانة صفحات الشركة وأدواتها الداخلية." },
+    job4_b2:   { en: "Turned designs into responsive interfaces that held up across browsers and screen sizes.", ar: "حوّلت التصاميم إلى واجهات متجاوبة تصمد على مختلف المتصفحات وأحجام الشاشات." },
+    job4_b3:   { en: "My first role inside a professional team, working in English in Kuala Lumpur.", ar: "أول وظيفة لي داخل فريق محترف، بالعمل باللغة الإنجليزية في كوالالمبور." },
+
+    eb_edu: { en: "Education", ar: "التعليم" },
+    edu1_t: { en: "BSc (Hons) Software Engineering — Dual Degree", ar: "بكالوريوس هندسة البرمجيات — شهادة مزدوجة" },
+    edu1_p: { en: "University of Central Lancashire (UK) & SEGi University (Malaysia) · 2024", ar: "جامعة سنترال لانكشاير (بريطانيا) وجامعة سيجي (ماليزيا) · 2024" },
+    edu2_t: { en: "Continuous learning", ar: "تعلّم مستمر" },
+    edu2_p: { en: "Angular picked up on the job at Ashal; currently deepening TypeScript architecture and Flutter state management.", ar: "اكتسبت Angular أثناء العمل في أسهل، وأعمّق حالياً معرفتي ببنية TypeScript وإدارة الحالة في Flutter." },
+
+    eb_skills:   { en: "Toolkit", ar: "الأدوات" },
+    skills_title:{ en: "What I reach for.", ar: "ما أعمل به." },
+    skills_lede: { en: "Grouped by the job it does, not by a percentage bar. Highlighted items are what I use most weeks.", ar: "مُجمّعة حسب الغرض منها، لا بنسب مئوية. العناصر المميّزة هي ما أستخدمه في معظم الأسابيع." },
+    sk1_t: { en: "Mobile", ar: "الجوال" },
+    sk2_t: { en: "Web", ar: "الويب" },
+    sk3_t: { en: "Backend & data", ar: "الخلفية والبيانات" },
+    sk4_t: { en: "Craft", ar: "الحرفة" },
+
+    eb_work:    { en: "Selected work", ar: "أعمال مختارة" },
+    work_title: { en: "Selected products and projects.", ar: "منتجات ومشاريع مختارة." },
+    work_lede:  { en: "Client platforms built with a team, and apps I delivered on my own. Every entry links to the running product or a walkthrough.", ar: "منصات عملاء بنيتها ضمن فريق، وتطبيقات سلّمتها وحدي. كل عنصر يقود إلى المنتج الحي أو إلى جولة تعريفية." },
+    fl_all:     { en: "All", ar: "الكل" },
+    fl_web:     { en: "Web", ar: "ويب" },
+    fl_mobile:  { en: "Mobile", ar: "جوال" },
+    fl_systems: { en: "Systems", ar: "أنظمة" },
+    visit:       { en: "Visit the site", ar: "زيارة الموقع" },
+    walkthrough: { en: "See the walkthrough", ar: "شاهد الجولة" },
+    tag_app:     { en: "Flutter app", ar: "تطبيق Flutter" },
+    tag_desktop: { en: "Desktop system", ar: "نظام سطح مكتب" },
+
+    chip_progress: { en: "In progress", ar: "قيد التطوير" },
+    p0_org: { en: "At Jaddaf", ar: "في جداف" },
+    p0_t:   { en: "CustomStudio — Packaging Control System", ar: "CustomStudio — نظام التحكّم بالتغليف" },
+    p0_d:   { en: "An internal system for running product and packaging operations end to end. Arabic-first throughout, with an account per role created by an administrator.", ar: "نظام داخلي لإدارة عمليات المنتجات والتغليف من البداية للنهاية. عربي بالكامل، مع حساب لكل دور يُنشئه المسؤول." },
+
+    p1_org: { en: "At Jaddaf · 2026", ar: "في جداف · 2026" },
+    p1_t:   { en: "Libro — Smart Watches Storefront", ar: "ليبرو — متجر الساعات الذكية" },
+    p1_d:   { en: "A bilingual e-commerce storefront for smart watches and bracelets: product catalogue, cart and checkout, and an Arabic/English interface that mirrors cleanly in both directions.", ar: "متجر إلكتروني ثنائي اللغة للساعات والأساور الذكية: كتالوج المنتجات، والسلة وإتمام الطلب، وواجهة عربية/إنجليزية تنعكس بنظافة في الاتجاهين." },
+
+    p2_org: { en: "Independent · 2025", ar: "عمل مستقل · 2025" },
+    p2_t:   { en: "Olyx — Digital Agency Platform", ar: "اوليكس — منصة وكالة رقمية" },
+    p2_d:   { en: "A Saudi agency site and website platform: clients get a bilingual site on their own domain with an Arabic admin panel they can run themselves, alongside branding and content services.", ar: "موقع ومنصة لوكالة رقمية سعودية: يحصل العميل على موقع بلغتين على نطاقه الخاص مع لوحة تحكم عربية يديرها بنفسه، إلى جانب خدمات الهوية والمحتوى." },
+
+    p3_org: { en: "At Ashal · 2026", ar: "في أسهل · 2026" },
+    p3_t:   { en: "Ashal — IT Solutions System", ar: "أسهل — نظام حلول تقنية المعلومات" },
+    p3_d:   { en: "Front end for an integrated IT-solutions company, built in Angular. I contributed pages and components to the live system and learned the framework on the job while shipping.", ar: "الواجهة الأمامية لشركة حلول حاسب متكاملة، مبنية بـAngular. ساهمت بصفحات ومكوّنات في النظام الحي، وتعلّمت الإطار أثناء العمل والتسليم." },
+
+    p4_org: { en: "Independent · 2025", ar: "عمل مستقل · 2025" },
+    p4_t:   { en: "Taqaseem — Tailoring Management", ar: "تقاسيم — إدارة مشاغل الخياطة" },
+    p4_d:   { en: "An operations app for tailoring workshops: customer measurements, fabric inventory, order stages, and automatic WhatsApp updates when a garment is ready.", ar: "تطبيق تشغيلي لمشاغل الخياطة: قياسات العملاء، ومخزون الأقمشة، ومراحل الطلب، وإشعارات واتساب تلقائية عند جاهزية الثوب." },
+
+    p5_org: { en: "Independent · 2025", ar: "عمل مستقل · 2025" },
+    p5_t:   { en: "Restaurant Ordering App", ar: "تطبيق طلبات المطاعم" },
+    p5_d:   { en: "A customer-facing food ordering app with menu browsing, live order tracking, and multiple payment options — built to stay usable on a slow connection.", ar: "تطبيق طلب طعام للعملاء يضم تصفح القائمة وتتبع الطلب المباشر وخيارات دفع متعددة — مبني ليظل صالحاً للاستخدام على اتصال بطيء." },
+
+    p6_org: { en: "Independent · 2024", ar: "عمل مستقل · 2024" },
+    p6_t:   { en: "Pharmacy Management System", ar: "نظام إدارة الصيدليات" },
+    p6_d:   { en: "Stock and prescription tracking for a pharmacy: batch and expiry control, dispensing records, and reporting, backed by a relational database.", ar: "تتبع المخزون والوصفات الطبية للصيدلية: ضبط التشغيلات وتواريخ الانتهاء، وسجلات الصرف، والتقارير، بقاعدة بيانات علائقية." },
+
+    p7_org: { en: "Independent · 2025", ar: "عمل مستقل · 2025" },
+    p7_t:   { en: "Johnson PPF — Car Protection", ar: "جونسون PPF — حماية السيارات" },
+    p7_d:   { en: "A service site for a Saudi car-care studio covering paint protection film, heat insulation, and ceramic coating, with booking enquiries routed straight to WhatsApp.", ar: "موقع خدمي لمركز عناية بالسيارات في السعودية يغطي أفلام حماية الطلاء والعزل الحراري والطلاء السيراميكي، مع توجيه طلبات الحجز مباشرة إلى واتساب." },
+
+    p8_org: { en: "Independent · 2025", ar: "عمل مستقل · 2025" },
+    p8_t:   { en: "Alkhayala — Tailoring House", ar: "الخيالة — دار الخياطة" },
+    p8_d:   { en: "A storefront for a traditional thoub tailor: fabric ranges, the measurement process explained step by step, and a direct line to book a fitting.", ar: "واجهة لمشغل خياطة أثواب تقليدية: تشكيلات الأقمشة، وشرح خطوة بخطوة لطريقة أخذ القياس، وخط مباشر لحجز موعد." },
+
+    p9_org: { en: "Independent · 2025", ar: "عمل مستقل · 2025" },
+    p9_t:   { en: "Helabi — Tailoring at Your Door", ar: "هلابي — الخياطة عند بابك" },
+    p9_d:   { en: "A booking site for a tailor who takes measurements at the customer's home and delivers the finished thoub — the whole flow built around one request form.", ar: "موقع حجز لخياط يأخذ القياسات في منزل العميل ويسلّم الثوب جاهزاً — التدفق كله مبني حول نموذج طلب واحد." },
+
+    eb_services:    { en: "How I can help", ar: "كيف أساعدك" },
+    services_title: { en: "Four things I do well.", ar: "أربعة أشياء أتقنها." },
+    s1_t: { en: "Mobile apps", ar: "تطبيقات الجوال" },
+    s1_d: { en: "One Flutter codebase for Android and iOS, from the first screen to the store listing.", ar: "قاعدة كود واحدة بـFlutter لأندرويد وiOS، من أول شاشة حتى النشر في المتجر." },
+    s2_t: { en: "Web platforms", ar: "منصات الويب" },
+    s2_d: { en: "Angular and React front ends, admin dashboards, and marketing sites that work in Arabic and English.", ar: "واجهات Angular وReact، ولوحات تحكم، ومواقع تسويقية تعمل بالعربية والإنجليزية." },
+    s3_t: { en: "APIs & integration", ar: "الـAPI والتكامل" },
+    s3_d: { en: "REST endpoints, authentication, payments, and database work that connects the interface to real data.", ar: "نقاط REST، والمصادقة، والمدفوعات، وأعمال قواعد البيانات التي تربط الواجهة ببيانات حقيقية." },
+    s4_t: { en: "Speed & SEO", ar: "السرعة وتحسين الظهور" },
+    s4_d: { en: "Auditing an existing site, cutting load time, and fixing the markup search engines read.", ar: "فحص موقع قائم، وتقليص زمن التحميل، وإصلاح الوسوم التي تقرأها محركات البحث." },
+
+    eb_contact:    { en: "Get in touch", ar: "تواصل معي" },
+    contact_title: { en: "Tell me what you want to build.", ar: "أخبرني بما تريد بناءه." },
+    contact_lede:  { en: "Send a short brief — what the product does, who it is for, and when you need it. I reply within a day.", ar: "أرسل ملخصاً قصيراً: ما الذي يفعله المنتج، ولمن، ومتى تحتاجه. أرد خلال يوم." },
+    form_name:    { en: "Your name", ar: "الاسم" },
+    form_service: { en: "What do you need?", ar: "ما الذي تحتاجه؟" },
+    opt_web:      { en: "Website", ar: "موقع إلكتروني" },
+    opt_store:    { en: "Online store", ar: "متجر إلكتروني" },
+    opt_mobile:   { en: "Mobile app", ar: "تطبيق جوال" },
+    opt_system:   { en: "Management system", ar: "نظام إدارة" },
+    opt_improve:  { en: "Improve an existing site", ar: "تطوير موقع قائم" },
+    opt_other:    { en: "Something else", ar: "شيء آخر" },
+    form_message: { en: "Your message", ar: "اكتب رسالتك" },
+    form_send:    { en: "Send on WhatsApp", ar: "أرسل عبر واتساب" },
+    form_note:    { en: "This opens WhatsApp with your message already written.", ar: "يفتح واتساب ورسالتك جاهزة للإرسال." },
+    footer_left:  { en: "© 2026 Ebrahim Alesayi", ar: "© 2026 إبراهيم العيسائي" }
+  };
+
+  var langEn = document.getElementById('langEn');
+  var langAr = document.getElementById('langAr');
+
+  function setLanguage(lang) {
+    root.lang = lang;
+    root.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var entry = i18n[el.getAttribute('data-i18n')];
+      if (entry && entry[lang]) el.innerHTML = entry[lang];
+    });
+    langEn.setAttribute('aria-pressed', String(lang === 'en'));
+    langAr.setAttribute('aria-pressed', String(lang === 'ar'));
+    document.title = lang === 'ar'
+      ? 'إبراهيم العيسائي — مهندس برمجيات، ويب وجوال'
+      : 'Ebrahim Alesayi — Software Engineer, Web & Mobile';
+    themeBtn.setAttribute('aria-label', lang === 'ar' ? 'تبديل المظهر' : 'Switch theme');
+    burger.setAttribute('aria-label', lang === 'ar' ? 'القائمة' : 'Menu');
+    toTop.setAttribute('aria-label', lang === 'ar' ? 'العودة للأعلى' : 'Back to top');
+    document.querySelector('.filters').setAttribute('aria-label', lang === 'ar' ? 'تصفية المشاريع' : 'Filter projects');
+    document.querySelector('.lang').setAttribute('aria-label', lang === 'ar' ? 'اللغة' : 'Language');
+    document.querySelector('nav').setAttribute('aria-label', lang === 'ar' ? 'التنقل الرئيسي' : 'Primary');
+    startTyping(lang);
+    measureClimb();
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+
+  var savedLang = null;
+  try { savedLang = localStorage.getItem('lang'); } catch (e) {}
+  setLanguage(savedLang === 'ar' ? 'ar' : 'en');
+  langEn.addEventListener('click', function () { setLanguage('en'); });
+  langAr.addEventListener('click', function () { setLanguage('ar'); });
+})();
+</script>
 </body>
 </html>
