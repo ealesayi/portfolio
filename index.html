@@ -727,6 +727,7 @@ button,input,textarea{font:inherit;color:inherit}
   display:inline-flex;align-items:center;gap:.4rem;margin-top:.4rem;
   color:var(--coral);font-size:.88rem;font-weight:500;
 }
+.proj-links{display:flex;flex-wrap:wrap;gap:0 1.2rem}
 .proj-link .svg{transition:transform .2s ease}
 .proj-link:hover .svg{transform:translateX(3px)}
 [dir="rtl"] .proj-link:hover .svg{transform:translateX(-3px) scaleX(-1)}
@@ -991,8 +992,8 @@ button,input,textarea{font:inherit;color:inherit}
 <!-- ============================ METRICS ============================ -->
 <div class="wrap">
   <div class="metrics reveal">
-    <div class="metric"><b>9</b><span data-i18n="m_projects">Projects shipped</span></div>
-    <div class="metric"><b>6</b><span data-i18n="m_live">Live products</span></div>
+    <div class="metric"><b>10</b><span data-i18n="m_projects">Projects shipped</span></div>
+    <div class="metric"><b>8</b><span data-i18n="m_live">Live products</span></div>
     <div class="metric"><b>3</b><span data-i18n="m_companies">Companies</span></div>
     <div class="metric"><b>AR/EN</b><span data-i18n="m_bilingual">Bilingual builds</span></div>
   </div>
@@ -1049,6 +1050,7 @@ button,input,textarea{font:inherit;color:inherit}
           <ul>
             <li data-i18n="job1_b1">Build and ship client web platforms and mobile apps end to end, from interface to deployment.</li>
             <li data-i18n="job1_b2">Delivered <b>libro-mea.com</b>, a bilingual storefront for smart watches and bracelets.</li>
+            <li data-i18n="job1_b5">Built <b>alot-mea.com</b>, a React and Firebase store for phone covers and bags, and <b>Oudyaa</b>, a brand site for smart incense burners with a 3D product hero.</li>
             <li data-i18n="job1_b3">Integrate REST APIs, payments, and dashboards, and keep every build responsive in Arabic and English.</li>
             <li data-i18n="job1_b4">Currently building <b>CustomStudio</b>, an internal product and packaging control system, from the ground up.</li>
           </ul>
@@ -1085,7 +1087,7 @@ button,input,textarea{font:inherit;color:inherit}
           </p>
           <ul>
             <li data-i18n="job3_b1">Shipped cross-platform Flutter apps for tailoring shops, restaurants, and pharmacies.</li>
-            <li data-i18n="job3_b2">Built and launched business websites, including Olyx, Alkhayala, Helabi, and Johnson PPF.</li>
+            <li data-i18n="job3_b2">Built and launched business websites, including Olyx, Alkhayala, and Johnson PPF.</li>
             <li data-i18n="job3_b3">Handled the whole cycle: requirements, UI, API and database integration, and handover.</li>
           </ul>
           <div class="tags">
@@ -1232,6 +1234,44 @@ button,input,textarea{font:inherit;color:inherit}
         </div>
       </article>
 
+      <!-- Alot -->
+      <article class="proj reveal" data-cat="web" style="--hue:var(--coral);--d:60ms">
+        <div class="cover">
+          <img class="cover-photo" src="assets/img/projects/alot.jpg" alt="" loading="lazy" width="960" height="600">
+          <span class="cover-kind" aria-hidden="true"><svg class="svg"><use href="#i-cart"/></svg></span>
+          <span class="cover-domain">alot-mea.com</span>
+        </div>
+        <div class="proj-body">
+          <p class="proj-org" data-i18n="p10_org">At Jaddaf · 2026</p>
+          <h3 data-i18n="p10_t">Alot — Covers &amp; Bags Store</h3>
+          <p data-i18n="p10_d">A storefront for a Middle East brand of phone covers and bags: a video hero, product collections and an Arabic/English interface, backed by Firebase.</p>
+          <div class="tags"><span class="tag hl">React</span><span class="tag">Firebase</span><span class="tag">AR / EN</span></div>
+          <a class="proj-link" href="https://alot-mea.com/" target="_blank" rel="noopener">
+            <span data-i18n="visit">Visit the site</span>
+            <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Oudyaa -->
+      <article class="proj reveal" data-cat="web" style="--hue:var(--saffron);--d:120ms">
+        <div class="cover">
+          <img class="cover-photo" src="assets/img/projects/oudyaa.jpg" alt="" loading="lazy" width="960" height="600">
+          <span class="cover-kind" aria-hidden="true"><svg class="svg"><use href="#i-cart"/></svg></span>
+          <span class="cover-domain">oudyaa.netlify.app</span>
+        </div>
+        <div class="proj-body">
+          <p class="proj-org" data-i18n="p11_org">At Jaddaf · 2026</p>
+          <h3 data-i18n="p11_t">Oudyaa — Smart Incense Burners</h3>
+          <p data-i18n="p11_d">A brand site for electronic incense burners that warm oud at the press of a button: an interactive 3D product hero, sizes and colours, and ordering across Saudi Arabia.</p>
+          <div class="tags"><span class="tag hl">Three.js</span><span class="tag">Brand site</span><span class="tag">AR / EN</span></div>
+          <a class="proj-link" href="https://oudyaa.netlify.app/" target="_blank" rel="noopener">
+            <span data-i18n="visit">Visit the site</span>
+            <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </article>
+
       <!-- Olyx -->
       <article class="proj reveal" data-cat="web" style="--hue:var(--coral);--d:60ms">
         <div class="cover">
@@ -1275,17 +1315,23 @@ button,input,textarea{font:inherit;color:inherit}
         <div class="cover">
           <img class="cover-photo" src="assets/img/taqaseem/q1.jpeg" alt="" loading="lazy" width="499" height="1080">
           <span class="cover-kind" aria-hidden="true"><svg class="svg"><use href="#i-scissors"/></svg></span>
-          <span class="cover-domain" data-i18n="tag_app">Flutter app</span>
+          <span class="cover-domain">taqaseem.olyxsa.com</span>
         </div>
         <div class="proj-body">
           <p class="proj-org" data-i18n="p4_org">Independent · 2025</p>
           <h3 data-i18n="p4_t">Taqaseem — Tailoring Management</h3>
           <p data-i18n="p4_d">An operations app for tailoring workshops: customer measurements, fabric inventory, order stages, and automatic WhatsApp updates when a garment is ready.</p>
           <div class="tags"><span class="tag hl">Flutter</span><span class="tag">Firebase</span><span class="tag">WhatsApp API</span></div>
-          <a class="proj-link" href="projects/taqaseem.html">
-            <span data-i18n="walkthrough">See the walkthrough</span>
-            <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-          </a>
+          <div class="proj-links">
+            <a class="proj-link" href="https://taqaseem.olyxsa.com/" target="_blank" rel="noopener">
+              <span data-i18n="visit">Visit the site</span>
+              <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+            <a class="proj-link" href="projects/taqaseem.html">
+              <span data-i18n="walkthrough">See the walkthrough</span>
+              <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+          </div>
         </div>
       </article>
 
@@ -1365,24 +1411,6 @@ button,input,textarea{font:inherit;color:inherit}
         </div>
       </article>
 
-      <!-- Helabi -->
-      <article class="proj reveal" data-cat="web" style="--hue:var(--saffron);--d:120ms">
-        <div class="cover">
-          <img class="cover-photo" src="assets/img/projects/helabi.jpg" alt="" loading="lazy" width="960" height="600">
-          <span class="cover-kind" aria-hidden="true"><svg class="svg"><use href="#i-pin"/></svg></span>
-          <span class="cover-domain">helabi.netlify.app</span>
-        </div>
-        <div class="proj-body">
-          <p class="proj-org" data-i18n="p9_org">Independent · 2025</p>
-          <h3 data-i18n="p9_t">Helabi — Tailoring at Your Door</h3>
-          <p data-i18n="p9_d">A booking site for a tailor who takes measurements at the customer's home and delivers the finished thoub — the whole flow built around one request form.</p>
-          <div class="tags"><span class="tag hl">Web</span><span class="tag">Booking flow</span><span class="tag">Mobile-first</span></div>
-          <a class="proj-link" href="https://helabi.netlify.app/" target="_blank" rel="noopener">
-            <span data-i18n="visit">Visit the site</span>
-            <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-          </a>
-        </div>
-      </article>
 
     </div>
   </div>
@@ -1796,6 +1824,7 @@ button,input,textarea{font:inherit;color:inherit}
     job1_org:  { en: "Jaddaf", ar: "شركة جداف" },
     job1_b1:   { en: "Build and ship client web platforms and mobile apps end to end, from interface to deployment.", ar: "بناء وتسليم منصات ويب وتطبيقات جوال للعملاء من الواجهة حتى النشر." },
     job1_b2:   { en: "Delivered <b>libro-mea.com</b>, a bilingual storefront for smart watches and bracelets.", ar: "سلّمت <b>libro-mea.com</b>، متجراً ثنائي اللغة للساعات والأساور الذكية." },
+    job1_b5:   { en: "Built <b>alot-mea.com</b>, a React and Firebase store for phone covers and bags, and <b>Oudyaa</b>, a brand site for smart incense burners with a 3D product hero.", ar: "بنيت <b>alot-mea.com</b>، متجراً بـReact وFirebase للكفرات والحقائب، وموقع <b>عُودية</b> لمباخر إلكترونية ذكية مع عرض ثلاثي الأبعاد للمنتج." },
     job1_b3:   { en: "Integrate REST APIs, payments, and dashboards, and keep every build responsive in Arabic and English.", ar: "ربط واجهات REST والمدفوعات ولوحات التحكم، مع إبقاء كل بناء متجاوباً بالعربية والإنجليزية." },
 
     job1_b4:   { en: "Currently building <b>CustomStudio</b>, an internal product and packaging control system, from the ground up.", ar: "أطوّر حالياً <b>CustomStudio</b>، نظام تحكّم داخلي للمنتجات والتغليف، من الصفر." },
@@ -1811,7 +1840,7 @@ button,input,textarea{font:inherit;color:inherit}
     job3_role: { en: "Freelance Flutter & Web Developer", ar: "مطور Flutter وويب مستقل" },
     job3_org:  { en: "Independent", ar: "عمل مستقل" },
     job3_b1:   { en: "Shipped cross-platform Flutter apps for tailoring shops, restaurants, and pharmacies.", ar: "أطلقت تطبيقات Flutter متعددة المنصات لمشاغل خياطة ومطاعم وصيدليات." },
-    job3_b2:   { en: "Built and launched business websites, including Olyx, Alkhayala, Helabi, and Johnson PPF.", ar: "بنيت وأطلقت مواقع أعمال، منها اوليكس والخيالة وهلابي وجونسون PPF." },
+    job3_b2:   { en: "Built and launched business websites, including Olyx, Alkhayala, and Johnson PPF.", ar: "بنيت وأطلقت مواقع أعمال، منها اوليكس والخيالة وجونسون PPF." },
     job3_b3:   { en: "Handled the whole cycle: requirements, UI, API and database integration, and handover.", ar: "أدرت الدورة كاملة: المتطلبات، والواجهة، وربط الـAPI وقواعد البيانات، والتسليم." },
 
     job4_when: { en: "2022 — 2023 · 1 year", ar: "2022 — 2023 · سنة واحدة" },
@@ -1856,6 +1885,14 @@ button,input,textarea{font:inherit;color:inherit}
     p1_t:   { en: "Libro — Smart Watches Storefront", ar: "ليبرو — متجر الساعات الذكية" },
     p1_d:   { en: "A bilingual e-commerce storefront for smart watches and bracelets: product catalogue, cart and checkout, and an Arabic/English interface that mirrors cleanly in both directions.", ar: "متجر إلكتروني ثنائي اللغة للساعات والأساور الذكية: كتالوج المنتجات، والسلة وإتمام الطلب، وواجهة عربية/إنجليزية تنعكس بنظافة في الاتجاهين." },
 
+    p10_org: { en: "At Jaddaf · 2026", ar: "في جداف · 2026" },
+    p10_t:   { en: "Alot — Covers &amp; Bags Store", ar: "ألوت — متجر الكفرات والحقائب" },
+    p10_d:   { en: "A storefront for a Middle East brand of phone covers and bags: a video hero, product collections and an Arabic/English interface, backed by Firebase.", ar: "متجر لعلامة شرق أوسطية للكفرات والحقائب: واجهة رئيسية بالفيديو، ومجموعات منتجات، وواجهة عربية/إنجليزية مبنية على Firebase." },
+
+    p11_org: { en: "At Jaddaf · 2026", ar: "في جداف · 2026" },
+    p11_t:   { en: "Oudyaa — Smart Incense Burners", ar: "عُودية — مباخر إلكترونية ذكية" },
+    p11_d:   { en: "A brand site for electronic incense burners that warm oud at the press of a button: an interactive 3D product hero, sizes and colours, and ordering across Saudi Arabia.", ar: "موقع علامة لمباخر إلكترونية تفوّح العود بلمسة زر: عرض تفاعلي ثلاثي الأبعاد للمنتج، والأحجام والألوان، والطلب لكل مدن المملكة." },
+
     p2_org: { en: "Independent · 2025", ar: "عمل مستقل · 2025" },
     p2_t:   { en: "Olyx — Digital Agency Platform", ar: "اوليكس — منصة وكالة رقمية" },
     p2_d:   { en: "A Saudi agency site and website platform: clients get a bilingual site on their own domain with an Arabic admin panel they can run themselves, alongside branding and content services.", ar: "موقع ومنصة لوكالة رقمية سعودية: يحصل العميل على موقع بلغتين على نطاقه الخاص مع لوحة تحكم عربية يديرها بنفسه، إلى جانب خدمات الهوية والمحتوى." },
@@ -1883,10 +1920,6 @@ button,input,textarea{font:inherit;color:inherit}
     p8_org: { en: "Independent · 2025", ar: "عمل مستقل · 2025" },
     p8_t:   { en: "Alkhayala — Tailoring House", ar: "الخيالة — دار الخياطة" },
     p8_d:   { en: "A storefront for a traditional thoub tailor: fabric ranges, the measurement process explained step by step, and a direct line to book a fitting.", ar: "واجهة لمشغل خياطة أثواب تقليدية: تشكيلات الأقمشة، وشرح خطوة بخطوة لطريقة أخذ القياس، وخط مباشر لحجز موعد." },
-
-    p9_org: { en: "Independent · 2025", ar: "عمل مستقل · 2025" },
-    p9_t:   { en: "Helabi — Tailoring at Your Door", ar: "هلابي — الخياطة عند بابك" },
-    p9_d:   { en: "A booking site for a tailor who takes measurements at the customer's home and delivers the finished thoub — the whole flow built around one request form.", ar: "موقع حجز لخياط يأخذ القياسات في منزل العميل ويسلّم الثوب جاهزاً — التدفق كله مبني حول نموذج طلب واحد." },
 
     eb_services:    { en: "How I can help", ar: "كيف أساعدك" },
     services_title: { en: "Four things I do well.", ar: "أربعة أشياء أتقنها." },
