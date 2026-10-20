@@ -915,7 +915,7 @@ button,input,textarea{font:inherit;color:inherit}
       <a href="#about" data-i18n="nav_about">About</a>
       <a href="#experience" data-i18n="nav_experience">Experience</a>
       <a href="#work" data-i18n="nav_work">Work</a>
-      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#services" data-i18n="nav_services">What I do</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
     </div>
 
@@ -956,7 +956,7 @@ button,input,textarea{font:inherit;color:inherit}
 
       <div class="hero-cta reveal" style="--d:240ms">
         <a class="btn btn-primary" href="#contact">
-          <span data-i18n="cta_hire">Start a project</span>
+          <span data-i18n="cta_hire">Get in touch</span>
           <svg class="svg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
         </a>
         <a class="btn btn-ghost" href="assets/docs/Ebrahim_Alesayi_CV.pdf" download>
@@ -1419,7 +1419,7 @@ button,input,textarea{font:inherit;color:inherit}
 <section class="sec" id="services">
   <div class="wrap">
     <header class="sec-head reveal">
-      <p class="eyebrow mono" data-i18n="eb_services">How I can help</p>
+      <p class="eyebrow mono" data-i18n="eb_services">What I do</p>
       <h2 class="sec-title" data-i18n="services_title">Four things I do well.</h2>
     </header>
 
@@ -1453,8 +1453,8 @@ button,input,textarea{font:inherit;color:inherit}
   <div class="wrap">
     <header class="sec-head reveal">
       <p class="eyebrow mono" data-i18n="eb_contact">Get in touch</p>
-      <h2 class="sec-title" data-i18n="contact_title">Tell me what you want to build.</h2>
-      <p class="sec-lede" data-i18n="contact_lede">Send a short brief — what the product does, who it is for, and when you need it. I reply within a day.</p>
+      <h2 class="sec-title" data-i18n="contact_title">Let's talk.</h2>
+      <p class="sec-lede" data-i18n="contact_lede">Questions, ideas, or just to say hello. I usually reply within a day.</p>
     </header>
 
     <div class="contact">
@@ -1487,17 +1487,6 @@ button,input,textarea{font:inherit;color:inherit}
           <div class="field">
             <label for="cf-name" data-i18n="form_name">Your name</label>
             <input id="cf-name" name="name" type="text" autocomplete="name" required>
-          </div>
-          <div class="field">
-            <label for="cf-service" data-i18n="form_service">What do you need?</label>
-            <select id="cf-service" name="service">
-              <option data-i18n="opt_web">Website</option>
-              <option data-i18n="opt_store">Online store</option>
-              <option data-i18n="opt_mobile">Mobile app</option>
-              <option data-i18n="opt_system">Management system</option>
-              <option data-i18n="opt_improve">Improve an existing site</option>
-              <option data-i18n="opt_other">Something else</option>
-            </select>
           </div>
           <div class="field">
             <label for="cf-msg" data-i18n="form_message">Your message</label>
@@ -1736,10 +1725,8 @@ button,input,textarea{font:inherit;color:inherit}
   waForm.addEventListener('submit', function (e) {
     e.preventDefault();
     var ar = document.documentElement.lang === 'ar';
-    var sel = waForm.elements.namedItem('service');
     var lines = [
       (ar ? 'الاسم: ' : 'Name: ') + waForm.elements.namedItem('name').value.trim(),
-      (ar ? 'الخدمة: ' : 'Service: ') + sel.options[sel.selectedIndex].text,
       '',
       waForm.elements.namedItem('message').value.trim()
     ];
@@ -1758,7 +1745,7 @@ button,input,textarea{font:inherit;color:inherit}
     nav_about:      { en: "About", ar: "نبذة" },
     nav_experience: { en: "Experience", ar: "الخبرة" },
     nav_work:       { en: "Work", ar: "الأعمال" },
-    nav_services:   { en: "Services", ar: "الخدمات" },
+    nav_services:   { en: "What I do", ar: "مجالات عملي" },
     nav_contact:    { en: "Contact", ar: "تواصل" },
     hero_ghost:  { en: "إبراهيم العيسائي", ar: "Ebrahim Alesayi" },
     hero_name:   { en: "Ebrahim Alesayi", ar: "إبراهيم العيسائي" },
@@ -1766,7 +1753,7 @@ button,input,textarea{font:inherit;color:inherit}
       en: "I build production mobile apps and web platforms for businesses in Saudi Arabia — Flutter on mobile, Angular and React on the web. Currently shipping client products at Jaddaf.",
       ar: "أبني تطبيقات جوال ومنصات ويب تعمل فعلياً لدى شركات في السعودية — Flutter للجوال، وAngular وReact للويب. حالياً أطوّر منتجات العملاء في شركة جداف."
     },
-    cta_hire:    { en: "Start a project", ar: "ابدأ مشروعاً" },
+    cta_hire:    { en: "Get in touch", ar: "تواصل معي" },
     cta_cv:      { en: "Download CV", ar: "تحميل السيرة الذاتية" },
     cta_preview: { en: "Preview", ar: "معاينة" },
 
@@ -1918,7 +1905,7 @@ button,input,textarea{font:inherit;color:inherit}
     p8_t:   { en: "Alkhayala — Tailoring House", ar: "الخيالة — دار الخياطة" },
     p8_d:   { en: "A storefront for a traditional thoub tailor: fabric ranges, the measurement process explained step by step, and a direct line to book a fitting.", ar: "واجهة لمشغل خياطة أثواب تقليدية: تشكيلات الأقمشة، وشرح خطوة بخطوة لطريقة أخذ القياس، وخط مباشر لحجز موعد." },
 
-    eb_services:    { en: "How I can help", ar: "كيف أساعدك" },
+    eb_services:    { en: "What I do", ar: "مجالات عملي" },
     services_title: { en: "Four things I do well.", ar: "أربعة أشياء أتقنها." },
     s1_t: { en: "Mobile apps", ar: "تطبيقات الجوال" },
     s1_d: { en: "One Flutter codebase for Android and iOS, from the first screen to the store listing.", ar: "قاعدة كود واحدة بـFlutter لأندرويد وiOS، من أول شاشة حتى النشر في المتجر." },
@@ -1930,16 +1917,9 @@ button,input,textarea{font:inherit;color:inherit}
     s4_d: { en: "Auditing an existing site, cutting load time, and fixing the markup search engines read.", ar: "فحص موقع قائم، وتقليص زمن التحميل، وإصلاح الوسوم التي تقرأها محركات البحث." },
 
     eb_contact:    { en: "Get in touch", ar: "تواصل معي" },
-    contact_title: { en: "Tell me what you want to build.", ar: "أخبرني بما تريد بناءه." },
-    contact_lede:  { en: "Send a short brief — what the product does, who it is for, and when you need it. I reply within a day.", ar: "أرسل ملخصاً قصيراً: ما الذي يفعله المنتج، ولمن، ومتى تحتاجه. أرد خلال يوم." },
+    contact_title: { en: "Let's talk.", ar: "لنتحدث." },
+    contact_lede:  { en: "Questions, ideas, or just to say hello. I usually reply within a day.", ar: "سؤال أو فكرة أو مجرد تحية. عادةً أرد خلال يوم." },
     form_name:    { en: "Your name", ar: "الاسم" },
-    form_service: { en: "What do you need?", ar: "ما الذي تحتاجه؟" },
-    opt_web:      { en: "Website", ar: "موقع إلكتروني" },
-    opt_store:    { en: "Online store", ar: "متجر إلكتروني" },
-    opt_mobile:   { en: "Mobile app", ar: "تطبيق جوال" },
-    opt_system:   { en: "Management system", ar: "نظام إدارة" },
-    opt_improve:  { en: "Improve an existing site", ar: "تطوير موقع قائم" },
-    opt_other:    { en: "Something else", ar: "شيء آخر" },
     form_message: { en: "Your message", ar: "اكتب رسالتك" },
     form_send:    { en: "Send on WhatsApp", ar: "أرسل عبر واتساب" },
     form_note:    { en: "This opens WhatsApp with your message already written.", ar: "يفتح واتساب ورسالتك جاهزة للإرسال." },
